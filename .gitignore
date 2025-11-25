@@ -4,6 +4,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+.github/
 
 db.sqlite3
 /static/
