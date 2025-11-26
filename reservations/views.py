@@ -4,8 +4,26 @@ from .forms import ReservationForm
 
 
 
+# def reservation_view(request):
+#     return render(request, "reservations/reservation_view.html")
+
+# Homepage
+def home(request):
+    return render(request, "reservations/home.html")
+
+# Menu page
+def menu(request):
+    return render(request, "reservations/menu.html")
+
+# Contact page
+def contact(request):
+    return render(request, "reservations/contact.html")
+
+# Reservation landing page (optional, can remove if not needed)
 def reservation_view(request):
     return render(request, "reservations/reservation_view.html")
+
+
 
 
 def book_reservation(request):

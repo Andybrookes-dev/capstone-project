@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Menu{% endblock %}
+{% load static %}
+
+{% block content %}
+<section class="container py-5">
+  <h1 class="fw-bold mb-4">Our Menu</h1>
+
+  <div class="row g-4">
+    <!-- Starters -->
+    <div class="col-md-6">
+      <h2 class="h4 fw-bold">Starters</h2>
+      <ul class="list-unstyled">
+        <li><strong>Soup of the Day</strong> — served with warm sourdough</li>
+        <li><strong>Grilled Peppers</strong> — feta, herbs, olive oil</li>
+      </ul>
+    </div>
+
+    <!-- Mains -->
+    <div class="col-md-6">
+      <h2 class="h4 fw-bold">Mains</h2>
+      <ul class="list-unstyled">
+        <li><strong>House Burger</strong> — cheddar, pickles, brioche bun</li>
+        <li><strong>Seasonal Pasta</strong> — market greens, parmesan</li>
+      </ul>
+    </div>
+
+    <!-- Desserts -->
+    <div class="col-md-6">
+      <h2 class="h4 fw-bold">Desserts</h2>
+      <ul class="list-unstyled">
+        <li><strong>Sticky Toffee Pudding</strong> — vanilla ice cream</li>
+        <li><strong>Chocolate Brownie</strong> — salted caramel drizzle</li>
+      </ul>
+    </div>
+
+    <!-- Drinks -->
+    <div class="col-md-6">
+      <h2 class="h4 fw-bold">Drinks</h2>
+      <ul class="list-unstyled">
+        <li><strong>Classic Negroni</strong></li>
+        <li><strong>House Lager</strong></li>
+        <li><strong>Seasonal Mocktail</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}
