@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}My Reservations{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+  <h1 class="fw-bold mb-4">My Reservations</h1>
+
+  {% if reservations %}
+    <table class="table table-striped align-middle">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Table</th>
+          <th scope="col">Party Size</th>
+          <th scope="col">Special Requests</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for reservation in reservations %}
+          <tr>
+            <td>{{ reservation.date }}</td>
+            <td>{{ reservation.time }}</td>
+            <td>{{ reservation.table }}</td>
+            <td>{{ reservation.party_size }}</td>
+            <td>{{ reservation.special_requests|default:"—" }}</td>
+            <td>
+              <a href="{% url 'edit_reservation' reservation.pk %}" class="btn btn-sm btn-primary">Edit</a>
+              <a href="{% url 'delete_reservation' reservation.pk %}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>You don’t have any reservations yet. <a href="{% url 'book_reservation' %}">Book one now</a>.</p>
+  {% endif %}
+</section>
+{% endblock %}

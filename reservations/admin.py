@@ -1,6 +1,6 @@
 from django.contrib import admin
-
 from .models import Table, Reservation
+from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Table)
 class TableAdmin(admin.ModelAdmin):
