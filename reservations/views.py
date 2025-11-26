@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.contrib import messages
 from .forms import ReservationForm
 
+
+
 def reservation_view(request):
     return render(request, "reservations/reservation_view.html")
+
 
 def book_reservation(request):
     if request.method == "POST":
