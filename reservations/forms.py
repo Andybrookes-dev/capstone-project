@@ -11,6 +11,14 @@ class ReservationForm(forms.ModelForm):
             "time": forms.TimeInput(attrs={"type": "time"}),
         }
 
+    def clean_date(self):
+        date = self.cleaned_data.get("date")
+        if date and date < datetime.date.today():
+            raise forms.ValidationError(
+                "You cannot book a reservation in the past."
+            )
+        return date    
+
     def clean_time(self):
         time = self.cleaned_data.get("time")
         if time:
