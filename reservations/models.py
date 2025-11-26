@@ -2,26 +2,42 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class Table(models.Model):
+    """
+    Represents a physical table in the restaurant.
+    """
+    number = models.IntegerField(unique=True)  # Table number
+    capacity = models.PositiveIntegerField()   # How many guests can sit here
+    location = models.CharField(max_length=100)  # e.g. "Patio", "Main Hall"
+
+    def __str__(self):
+        return f"Table {self.number} ({self.capacity} seats - {self.location})"
+
+
 class Reservation(models.Model):
     """
     Stores a single reservation entry for a restaurant.
-    Linked optionally to a registered user.
+    Linked optionally to a registered user and a table.
     """
 
-    # If you want to tie reservations to logged-in users
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, blank=True, related_name="reservations"
     )
+    table = models.ForeignKey(
+        Table, on_delete=models.CASCADE, related_name="reservations",
+        null=True,        # allow nulls temporarily
+        blank=True        # allow blank in forms
+    )
 
-    name = models.CharField(max_length=100)  # Guest name
-    email = models.EmailField()              # Contact email
-    phone = models.CharField(max_length=20, blank=True)  # Optional phone number
+    name = models.CharField(max_length=100)  
+    email = models.EmailField()              
+    phone = models.CharField(max_length=20, blank=True)  
 
-    date = models.DateField()                # Reservation date
-    time = models.TimeField()                # Reservation time
-    party_size = models.PositiveIntegerField()  # Number of guests
+    date = models.DateField()                
+    time = models.TimeField()                
+    party_size = models.PositiveIntegerField()  
 
-    special_requests = models.TextField(blank=True)  # Dietary needs, seating preferences, etc.
+    special_requests = models.TextField(blank=True)  
 
     STATUS_CHOICES = [
         ("pending", "Pending"),
@@ -39,7 +55,4 @@ class Reservation(models.Model):
         ordering = ["-date", "-time"]
 
     def __str__(self):
-        return f"Reservation for {self.name} on {self.date} at {self.time}"
-
-
-
+        return f"{self.name} - {self.date} at {self.time} (Table {self.table.number})"
