@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ReservationForm
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 
 
 # def reservation_view(request):
@@ -25,7 +27,7 @@ def reservation_view(request):
 
 
 
-
+@login_required
 def book_reservation(request):
     if request.method == "POST":
         form = ReservationForm(request.POST)
@@ -45,3 +47,17 @@ def book_reservation(request):
 
 def reservation_success(request):
     return render(request, "reservations/reservation_success.html")
+
+def signup(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)  # log them in immediately after signup
+            messages.success(request, "Your account has been created successfully!")
+            return redirect("home")  # redirect to homepage or reservations
+        else:
+            messages.error(request, "Please correct the errors below.")
+    else:
+        form = UserCreationForm()
+    return render(request, "registration/signup.html", {"form": form})
