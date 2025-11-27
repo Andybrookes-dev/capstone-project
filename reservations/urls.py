@@ -1,21 +1,21 @@
-# from django.urls import path
-# from . views import reservation_view
-
-# urlpatterns = [
-#     path('', reservation_view, name='reservation'),
-# ]
-
 from django.urls import path
-from .views import reservation_view, book_reservation, reservation_success
 from . import views
 
 urlpatterns = [
-    path("", reservation_view, name="reservation"),
-    # path("book/", book_reservation, name="book_reservation"),
-    # path("success/", reservation_success, name="reservation_success"),
-    path("", views.home, name="home"), 
+    # Core pages
+    path("", views.home, name="home"),
     path("menu/", views.menu, name="menu"),
-    path("book/", views.book_reservation, name="book_reservation"),
     path("contact/", views.contact, name="contact"),
+
+    # Reservation flow
+    path("book/", views.book_reservation, name="book_reservation"),
     path("success/", views.reservation_success, name="reservation_success"),
+
+    # Reservation CRUD
+    path("reservations/", views.my_reservations, name="my_reservations"),
+    path("reservations/<int:pk>/edit/", views.edit_reservation, name="edit_reservation"),
+    path("reservations/<int:pk>/delete/", views.delete_reservation, name="delete_reservation"),
+
+    # Authentication
+    path("signup/", views.signup, name="signup"),
 ]

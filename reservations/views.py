@@ -1,31 +1,23 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .forms import ReservationForm
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-
-
-# def reservation_view(request):
-#     return render(request, "reservations/reservation_view.html")
+from django.contrib.auth import login
+from .forms import ReservationForm
+from .models import Reservation
 
 # Homepage
 def home(request):
     return render(request, "reservations/home.html")
 
-# Menu page
 def menu(request):
     return render(request, "reservations/menu.html")
 
-# Contact page
 def contact(request):
     return render(request, "reservations/contact.html")
 
-# Reservation landing page (optional, can remove if not needed)
 def reservation_view(request):
     return render(request, "reservations/reservation_view.html")
-
-
 
 @login_required
 def book_reservation(request):
@@ -33,16 +25,14 @@ def book_reservation(request):
         form = ReservationForm(request.POST)
         if form.is_valid():
             reservation = form.save(commit=False)
-            if request.user.is_authenticated:
-                reservation.user = request.user
+            reservation.user = request.user
             reservation.save()
             messages.success(request, "Your reservation has been booked successfully!")
-            return redirect("reservation_success")  # redirect to success page
+            return redirect("reservation_success")
         else:
             messages.error(request, "There was an error with your booking. Please try again.")
     else:
         form = ReservationForm()
-
     return render(request, "reservations/book_reservation.html", {"form": form})
 
 def reservation_success(request):
@@ -53,11 +43,38 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)  # log them in immediately after signup
+            login(request, user)
             messages.success(request, "Your account has been created successfully!")
-            return redirect("home")  # redirect to homepage or reservations
+            return redirect("home")
         else:
             messages.error(request, "Please correct the errors below.")
     else:
         form = UserCreationForm()
     return render(request, "registration/signup.html", {"form": form})
+
+@login_required
+def my_reservations(request):
+    reservations = Reservation.objects.filter(user=request.user)
+    return render(request, "reservations/my_reservations.html", {"reservations": reservations})
+
+@login_required
+def edit_reservation(request, pk):
+    reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
+    if request.method == "POST":
+        form = ReservationForm(request.POST, instance=reservation)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Reservation updated successfully!")
+            return redirect("my_reservations")
+    else:
+        form = ReservationForm(instance=reservation)
+    return render(request, "reservations/edit_reservation.html", {"form": form})
+
+@login_required
+def delete_reservation(request, pk):
+    reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
+    if request.method == "POST":
+        reservation.delete()
+        messages.success(request, "Reservation cancelled successfully!")
+        return redirect("my_reservations")
+    return render(request, "reservations/delete_reservation.html", {"reservation": reservation})
