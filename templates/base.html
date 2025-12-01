@@ -22,43 +22,50 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="{% url 'home' %}">Osteria Bella Notte</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <button id="toggleMode" class="btn btn-outline-light ms-3">🌙 Night</button>
+     <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{% url 'home' %}">Osteria Bella Notte</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <button id="toggleMode" class="btn btn-outline-light ms-3">🌙 Night</button>
 
-        <div id="mainNav" class="collapse navbar-collapse">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'menu' %}">Menu</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'book_reservation' %}">Reservations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-            </li>
+    <div id="mainNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <!-- Home first -->
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == home_url %}active{% endif %}" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'menu' %}">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'book_reservation' %}">Reservations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
 
-            {% if user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
-              </li>
-            {% else %}
-              <li class="nav-item">
-                <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
-              </li>
-            {% endif %}
-          </ul>
-        </div>
-      </div>
-    </nav>
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
 
+
+
+   
     <!-- Main container -->
     <div class="container">
         {% if messages %}
