@@ -127,7 +127,7 @@ body {
 }
 
 body.night-mode {
-    background-image: url("../images/restaurant-night.png");
+    background-image: url("../images/restaurant-night.a8150d284a57.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -135,7 +135,7 @@ body.night-mode {
 }
 
 body.day-mode {
-    background-image: url("../images/restaurant-day.png");
+    background-image: url("../images/restaurant-day.bb751089dc1c.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
