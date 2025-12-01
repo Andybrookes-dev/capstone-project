@@ -3,11 +3,11 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<section class="py-5 bg-dark text-white" style="background:url('{% static 'img/hero.jpg' %}') center/cover no-repeat;">
-  <div class="container py-5">
-    <h1 class="display-4 fw-bold">Welcome to Andy's Restaurant</h1>
-    <p class="lead mt-3">Seasonal dishes, classic drinks, and a warm welcome.</p>
-    <a href="{% url 'book_reservation' %}" class="btn btn-light btn-lg mt-3">Book a Table</a>
+<section class="hero-section">
+  <div class="hero-overlay container text-center">
+    <h1 class="hero-title">Welcome to Osteria Bella Notte</h1>
+    <p class="hero-subtitle">Seasonal dishes, classic drinks, and a warm welcome.</p>
+    <a href="{% url 'book_reservation' %}" class="btn btn-reserve">Book a Table</a>
   </div>
 </section>
 {% endblock %}
