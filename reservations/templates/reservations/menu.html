@@ -4,45 +4,82 @@
 
 {% block content %}
 <section class="container py-5">
-  <h1 class="fw-bold mb-4">Our Menu</h1>
 
-  <div class="row g-4">
+  <div class="menu-section">
+  <h2>Our Menu</h2>
+
+  <div class="accordion" id="menuAccordion">
+
     <!-- Starters -->
-    <div class="col-md-6">
-      <h2 class="h4 fw-bold">Starters</h2>
-      <ul class="list-unstyled">
-        <li><strong>Soup of the Day</strong> — served with warm sourdough</li>
-        <li><strong>Grilled Peppers</strong> — feta, herbs, olive oil</li>
-      </ul>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingStarters">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStarters" aria-expanded="true" aria-controls="collapseStarters">
+          Starters
+        </button>
+      </h2>
+      <div id="collapseStarters" class="accordion-collapse collapse show" aria-labelledby="headingStarters" data-bs-parent="#menuAccordion">
+        <div class="accordion-body">
+          <div class="menu-item"><span class="name">Bruschetta al Pomodoro</span><span class="price">£6.50</span></div>
+          <div class="menu-item"><span class="name">Caprese Salad</span><span class="price">£7.50</span></div>
+          <div class="menu-item"><span class="name">Antipasto Misto</span><span class="price">£9.00</span></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Mains -->
-    <div class="col-md-6">
-      <h2 class="h4 fw-bold">Mains</h2>
-      <ul class="list-unstyled">
-        <li><strong>House Burger</strong> — cheddar, pickles, brioche bun</li>
-        <li><strong>Seasonal Pasta</strong> — market greens, parmesan</li>
-      </ul>
+    <!-- Pasta -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingPasta">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePasta" aria-expanded="false" aria-controls="collapsePasta">
+          Pasta
+        </button>
+      </h2>
+      <div id="collapsePasta" class="accordion-collapse collapse" aria-labelledby="headingPasta" data-bs-parent="#menuAccordion">
+        <div class="accordion-body">
+          <div class="menu-item"><span class="name">Spaghetti Carbonara</span><span class="price">£12.00</span></div>
+          <div class="menu-item"><span class="name">Lasagna al Forno</span><span class="price">£13.50</span></div>
+          <div class="menu-item"><span class="name">Tagliatelle al Ragù (Bolognese)</span><span class="price">£12.50</span></div>
+          <div class="menu-item"><span class="name">Penne Arrabbiata</span><span class="price">£11.00</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pizza -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingPizza">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePizza" aria-expanded="false" aria-controls="collapsePizza">
+          Pizza
+        </button>
+      </h2>
+      <div id="collapsePizza" class="accordion-collapse collapse" aria-labelledby="headingPizza" data-bs-parent="#menuAccordion">
+        <div class="accordion-body">
+          <div class="menu-item"><span class="name">Margherita Pizza</span><span class="price">£9.50</span></div>
+          <div class="menu-item"><span class="name">Quattro Formaggi Pizza</span><span class="price">£11.00</span></div>
+          <div class="menu-item"><span class="name">Prosciutto e Funghi Pizza</span><span class="price">£12.50</span></div>
+        </div>
+      </div>
     </div>
 
     <!-- Desserts -->
-    <div class="col-md-6">
-      <h2 class="h4 fw-bold">Desserts</h2>
-      <ul class="list-unstyled">
-        <li><strong>Sticky Toffee Pudding</strong> — vanilla ice cream</li>
-        <li><strong>Chocolate Brownie</strong> — salted caramel drizzle</li>
-      </ul>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingDesserts">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDesserts" aria-expanded="false" aria-controls="collapseDesserts">
+          Desserts
+        </button>
+      </h2>
+      <div id="collapseDesserts" class="accordion-collapse collapse" aria-labelledby="headingDesserts" data-bs-parent="#menuAccordion">
+        <div class="accordion-body">
+          <div class="menu-item"><span class="name">Tiramisu</span><span class="price">£6.00</span></div>
+          <div class="menu-item"><span class="name">Panna Cotta</span><span class="price">£6.50</span></div>
+          <div class="menu-item"><span class="name">Cannoli Siciliani</span><span class="price">£5.50</span></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Drinks -->
-    <div class="col-md-6">
-      <h2 class="h4 fw-bold">Drinks</h2>
-      <ul class="list-unstyled">
-        <li><strong>Classic Negroni</strong></li>
-        <li><strong>House Lager</strong></li>
-        <li><strong>Seasonal Mocktail</strong></li>
-      </ul>
-    </div>
   </div>
+</div>
+
+ 
+
+  
 </section>
 {% endblock %}
