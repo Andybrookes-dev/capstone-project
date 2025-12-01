@@ -5,7 +5,7 @@
 {% block content %}
 <section class="container py-5">
 
-  <div class="menu-section">
+ <div class="menu-section">
   <h2>Our Menu</h2>
 
   <div class="accordion" id="menuAccordion">
@@ -20,8 +20,13 @@
       <div id="collapseStarters" class="accordion-collapse collapse show" aria-labelledby="headingStarters" data-bs-parent="#menuAccordion">
         <div class="accordion-body">
           <div class="menu-item"><span class="name">Bruschetta al Pomodoro</span><span class="price">£6.50</span></div>
+          <p class="dish-highlight">Grilled bread topped with fresh tomatoes, garlic, basil, and olive oil.</p>
+
           <div class="menu-item"><span class="name">Caprese Salad</span><span class="price">£7.50</span></div>
+          <p class="dish-highlight">Sliced mozzarella, tomatoes, and basil drizzled with olive oil.</p>
+
           <div class="menu-item"><span class="name">Antipasto Misto</span><span class="price">£9.00</span></div>
+          <p class="dish-highlight">Selection of cured meats, cheeses, olives, and marinated vegetables.</p>
         </div>
       </div>
     </div>
@@ -36,9 +41,16 @@
       <div id="collapsePasta" class="accordion-collapse collapse" aria-labelledby="headingPasta" data-bs-parent="#menuAccordion">
         <div class="accordion-body">
           <div class="menu-item"><span class="name">Spaghetti Carbonara</span><span class="price">£12.00</span></div>
+          <p class="dish-highlight">Classic Roman pasta with pancetta, egg, and Pecorino Romano cheese.</p>
+
           <div class="menu-item"><span class="name">Lasagna al Forno</span><span class="price">£13.50</span></div>
+          <p class="dish-highlight">Layers of pasta, ragù, béchamel, and Parmigiano baked to perfection.</p>
+
           <div class="menu-item"><span class="name">Tagliatelle al Ragù (Bolognese)</span><span class="price">£12.50</span></div>
+          <p class="dish-highlight">Fresh egg pasta served with slow-cooked meat ragù.</p>
+
           <div class="menu-item"><span class="name">Penne Arrabbiata</span><span class="price">£11.00</span></div>
+          <p class="dish-highlight">Spicy tomato sauce with garlic, chili, and parsley.</p>
         </div>
       </div>
     </div>
@@ -53,31 +65,75 @@
       <div id="collapsePizza" class="accordion-collapse collapse" aria-labelledby="headingPizza" data-bs-parent="#menuAccordion">
         <div class="accordion-body">
           <div class="menu-item"><span class="name">Margherita Pizza</span><span class="price">£9.50</span></div>
+          <p class="dish-highlight">Tomato, mozzarella, and basil — the classic Neapolitan pizza.</p>
+
           <div class="menu-item"><span class="name">Quattro Formaggi Pizza</span><span class="price">£11.00</span></div>
+          <p class="dish-highlight">Mozzarella, gorgonzola, Parmigiano, and provolone cheeses.</p>
+
           <div class="menu-item"><span class="name">Prosciutto e Funghi Pizza</span><span class="price">£12.50</span></div>
+          <p class="dish-highlight">Tomato, mozzarella, ham, and mushrooms.</p>
+
+          <div class="menu-item"><span class="name">Pizza Napoletana</span><span class="price">£11.50</span></div>
+          <p class="dish-highlight">Tomato, mozzarella, anchovies, capers, and oregano.</p>
+
+          <div class="menu-item"><span class="name">Pizza Diavola</span><span class="price">£12.00</span></div>
+          <p class="dish-highlight">Spicy salami with tomato, mozzarella, and chili peppers.</p>
+
+          <div class="menu-item"><span class="name">Pizza Ortolana</span><span class="price">£11.00</span></div>
+          <p class="dish-highlight">Seasonal grilled vegetables with tomato and mozzarella.</p>
+
+          <div class="menu-item"><span class="name">Pizza Frutti di Mare</span><span class="price">£13.50</span></div>
+          <p class="dish-highlight">Seafood mix with tomato, mozzarella, garlic, and parsley.</p>
         </div>
       </div>
     </div>
 
-    <!-- Desserts -->
+    <!-- Main Dishes -->
     <div class="accordion-item">
-      <h2 class="accordion-header" id="headingDesserts">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDesserts" aria-expanded="false" aria-controls="collapseDesserts">
-          Desserts
+      <h2 class="accordion-header" id="headingMains">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMains" aria-expanded="false" aria-controls="collapseMains">
+          Main Dishes
         </button>
       </h2>
-      <div id="collapseDesserts" class="accordion-collapse collapse" aria-labelledby="headingDesserts" data-bs-parent="#menuAccordion">
+      <div id="collapseMains" class="accordion-collapse collapse" aria-labelledby="headingMains" data-bs-parent="#menuAccordion">
         <div class="accordion-body">
-          <div class="menu-item"><span class="name">Tiramisu</span><span class="price">£6.00</span></div>
-          <div class="menu-item"><span class="name">Panna Cotta</span><span class="price">£6.50</span></div>
-          <div class="menu-item"><span class="name">Cannoli Siciliani</span><span class="price">£5.50</span></div>
+          <div class="menu-item"><span class="name">Stinco di Maiale al Forno</span><span class="price">£16.00</span></div>
+          <p class="dish-highlight">Slow-roasted pork shank, fall-off-the-bone tender.</p>
+
+          <div class="menu-item"><span class="name">Cotoletta alla Bolognese</span><span class="price">£15.50</span></div>
+          <p class="dish-highlight">Breaded veal cutlet with prosciutto and Parmigiano, baked in broth.</p>
+
+          <div class="menu-item"><span class="name">Pollo alla Cacciatora</span><span class="price">£14.00</span></div>
+          <p class="dish-highlight">Hunter-style chicken with tomatoes, olives, and herbs.</p>
+
+          <div class="menu-item"><span class="name">Saltimbocca alla Romana</span><span class="price">£15.00</span></div>
+          <p class="dish-highlight">Veal with prosciutto and sage, cooked in white wine.</p>
+
+          <div class="menu-item"><span class="name">Branzino al Limone</span><span class="price">£17.50</span></div>
+          <p class="dish-highlight">Whole sea bass grilled with lemon and herbs.</p>
         </div>
       </div>
     </div>
 
-  </div>
-</div>
+    <!-- Salads -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSalads">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalads" aria-expanded="false" aria-controls="collapseSalads">
+          Salads
+        </button>
+      </h2>
+      <div id="collapseSalads" class="accordion-collapse collapse" aria-labelledby="headingSalads" data-bs-parent="#menuAccordion">
+        <div class="accordion-body">
+          <div class="menu-item"><span class="name">Insalata Caprese</span><span class="price">£7.50</span></div>
+          <p class="dish-highlight">Fresh mozzarella, tomatoes, basil, olive oil.</p>
 
+          <div class="menu-item"><span class="name">Insalata di Rucola e Parmigiano</span><span class="price">£6.50</span></div>
+          <p class="dish-highlight">Peppery rocket with shaved Parmigiano and lemon dressing.</p>
+
+          <div class="menu-item"><span class="name">Insalata Mista</span><span class="price">£6.00</span></div>
+          <p class="dish-highlight">Mixed greens, tomatoes, cucumber, olives.</p>
+
+          <div class="menu-item"><span class="name">Panzanella Toscana</span><span class="price
  
 
   
