@@ -5,10 +5,11 @@ import datetime
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = ["name", "email", "phone", "date", "time", "party_size", "special_requests"]
+        fields = ["reservation_name", "email", "phone", "date", "time", "party_size", "special_requests"]
         widgets = {
             "date": forms.DateInput(attrs={"type": "date"}),
             "time": forms.TimeInput(attrs={"type": "time"}),
+            "special_requests": forms.Textarea(attrs={"rows": 3}),
         }
 
     def clean_date(self):
