@@ -23,8 +23,8 @@ main {
 }
 
 /* Night/Day backgrounds */
-body.night-mode { background-image: url("../images/restaurant-night.png"); }
-body.day-mode { background-image: url("../images/restaurant-day.png"); }
+body.night-mode { background-image: url("../images/restaurant-night.a8150d284a57.png"); }
+body.day-mode { background-image: url("../images/restaurant-day.bb751089dc1c.png"); }
 
 /* Footer (no fixed positioning now) */
 footer {
@@ -168,23 +168,4 @@ footer .text-muted {
     font-family: 'Shadows Into Light', cursive;
     font-size: 1.5rem;
     margin-bottom: 30px;
-}
-
-/* Reserve button */
-.btn.btn-reserve {
-    background-color: #8b0000; /* deep red wine tone */
-    color: #fff;
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 1.2rem;
-    padding: 12px 30px;
-    border: 2px solid #ffd700;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    display: inline-block;
-    text-align: center;
-}
-.btn.btn-reserve:hover {
-    background-color: #ffd700;
-    color: #1c1c1c;
-    text-shadow: 0 0 5px rgba(0,0,0,0.6);
 }

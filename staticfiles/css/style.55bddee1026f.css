@@ -23,8 +23,8 @@ main {
 }
 
 /* Night/Day backgrounds */
-body.night-mode { background-image: url("../images/restaurant-night.png"); }
-body.day-mode { background-image: url("../images/restaurant-day.png"); }
+body.night-mode { background-image: url("../images/restaurant-night.a8150d284a57.png"); }
+body.day-mode { background-image: url("../images/restaurant-day.bb751089dc1c.png"); }
 
 /* Footer (no fixed positioning now) */
 footer {
@@ -89,7 +89,13 @@ footer .text-muted {
     border-radius: 8px;
 }
 
-/* Menu items */
+/* Dish name styling: bold + underlined */
+.menu-item .name {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #fdf6e3;
+}
+
 .menu-item {
     margin-bottom: 15px;
     font-size: 1.2rem;
@@ -98,7 +104,6 @@ footer .text-muted {
 }
 .menu-item .name {
     font-weight: bold;
-    text-decoration: underline;
     color: #fdf6e3;
 }
 .menu-item .price {
@@ -124,67 +129,4 @@ footer .text-muted {
 .navbar-nav .nav-link {
     color: #fdf6e3 !important;
     margin-left: 15px;
-    transition: color 0.3s ease;
-}
-.navbar-nav .nav-link:hover {
-    color: #ffd700 !important;
-    text-shadow: 0 0 5px rgba(255,215,0,0.6);
-}
-.navbar-nav .nav-link.active {
-    color: #ffd700 !important;
-    text-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
-    border-bottom: 2px solid #ffd700;
-    font-weight: bold;
-}
-.navbar-toggler {
-    border-color: #ffd700;
-}
-
-
-/* Hero section */
-.hero-section {
-    position: relative;
-    padding: 100px 0;
-    color: #fdf6e3;
-    text-align: center;
-}
-
-.hero-overlay {
-    background-color: rgba(28, 28, 28, 0.75);
-    padding: 40px;
-    border-radius: 10px;
-    display: inline-block;
-    box-shadow: 0 0 15px rgba(0,0,0,0.6);
-}
-
-.hero-title {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 3rem;
-    color: #ffd700;
-    margin-bottom: 20px;
-}
-
-.hero-subtitle {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-}
-
-/* Reserve button */
-.btn.btn-reserve {
-    background-color: #8b0000; /* deep red wine tone */
-    color: #fff;
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 1.2rem;
-    padding: 12px 30px;
-    border: 2px solid #ffd700;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    display: inline-block;
-    text-align: center;
-}
-.btn.btn-reserve:hover {
-    background-color: #ffd700;
-    color: #1c1c1c;
-    text-shadow: 0 0 5px rgba(0,0,0,0.6);
-}
+    transition
