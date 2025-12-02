@@ -16,9 +16,6 @@ def menu(request):
 def contact(request):
     return render(request, "reservations/contact.html")
 
-def reservation_view(request):
-    return render(request, "reservations/reservation_view.html")
-
 @login_required
 def book_reservation(request):
     existing_reservation = Reservation.objects.filter(user=request.user).first()
