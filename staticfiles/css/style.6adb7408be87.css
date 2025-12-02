@@ -135,8 +135,8 @@ body {
     transition: background-image 0.8s ease-in-out;
     padding-bottom: 60px; /* adjust to footer height */
 }
-body.night-mode { background-image: url("../images/restaurant-night.png"); }
-body.day-mode { background-image: url("../images/restaurant-day.png"); }
+body.night-mode { background-image: url("../images/restaurant-night.a8150d284a57.png"); }
+body.day-mode { background-image: url("../images/restaurant-day.bb751089dc1c.png"); }
 
 /* Reservation section */
 .reservation-section {

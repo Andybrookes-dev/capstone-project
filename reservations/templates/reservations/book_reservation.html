@@ -24,12 +24,46 @@
 <!-- Action buttons ABOVE footer -->
 <div class="container my-5">
   <div class="d-flex justify-content-center gap-3">
+    <!-- Update / Book button -->
     <button type="submit" form="reservation-form" class="btn btn-primary">
       {% if existing_reservation %}Update Reservation{% else %}Book Now{% endif %}
     </button>
+
+    <!-- Delete button triggers modal -->
+    {% if existing_reservation %}
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+        Delete Reservation
+      </button>
+    {% endif %}
+
+    <!-- Cancel button -->
     <a href="{% url 'home' %}" class="btn btn-secondary">
       Cancel
     </a>
   </div>
 </div>
+
+<!-- Delete Confirmation Modal -->
+{% if existing_reservation %}
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content chalkboard-modal">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to permanently delete your reservation? This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <form method="post" action="{% url 'delete_reservation' existing_reservation.id %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        </form>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Keep It</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
 {% endblock %}
