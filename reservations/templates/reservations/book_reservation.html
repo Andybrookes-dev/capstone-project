@@ -15,9 +15,10 @@
     <div class="alert alert-info text-center">
       You already have a reservation.
       {% with existing_reservation.id as res_id %}
-      <a href="{% url 'manage_reservation' res_id %}" class="btn btn-reserve ms-2">
-        Manage My Booking
-      </a>
+        <a href="{% url 'manage_reservation' res_id %}" class="btn btn-reserve ms-2">
+          Manage My Booking
+        </a>
+      {% endwith %}
     </div>
   {% endif %}
 
