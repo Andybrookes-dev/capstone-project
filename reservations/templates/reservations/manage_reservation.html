@@ -17,20 +17,19 @@
     <p><strong>Special Requests:</strong> {{ reservation.special_requests }}</p>
   </div>
 
-  <!-- Edit form -->
-  <form method="post" class="reservation-form">
+ <!-- Edit form -->
+    <form id="reservation-form" method="post" class="reservation-form">
     {% csrf_token %}
     {{ form.as_p }}
-    <div class="d-flex justify-content-center gap-3 mt-4">
-    <button type="submit" class="btn btn-reserve">Update Reservation</button>
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelModal">
-      Cancel Reservation
-    </button>
-  </div>
-</form>
+  </form>
+</div>
 
-  <!-- Cancel option (button triggers modal) -->
-  <div class="d-flex justify-content-center gap-3 mt-4">
+<!-- Action buttons above footer -->
+<div class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center gap-3">
+    <button type="submit" form="reservation-form" class="btn btn-reserve">
+      Update Reservation
+    </button>
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelModal">
       Cancel Reservation
     </button>

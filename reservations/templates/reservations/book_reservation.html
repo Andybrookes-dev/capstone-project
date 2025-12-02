@@ -5,8 +5,6 @@
 <div class="container mt-5">
   <h2 class="mb-4">Book a Reservation</h2>
 
-  
-
   {% if existing_reservation %}
     <div class="alert alert-info text-center">
       You already have a reservation.
@@ -16,14 +14,22 @@
     </div>
   {% endif %}
 
-  <form method="post" class="reservation-form">
+  <!-- Reservation form -->
+  <form id="reservation-form" method="post" class="reservation-form">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">
-      {% if existing_reservation %}Update Reservation{% else %}Book Now{% endif %}
-    </button>
   </form>
 </div>
 
-
+<!-- Action buttons ABOVE footer -->
+<div class="container my-5">
+  <div class="d-flex justify-content-center gap-3">
+    <button type="submit" form="reservation-form" class="btn btn-primary">
+      {% if existing_reservation %}Update Reservation{% else %}Book Now{% endif %}
+    </button>
+    <a href="{% url 'home' %}" class="btn btn-secondary">
+      Cancel
+    </a>
+  </div>
+</div>
 {% endblock %}
