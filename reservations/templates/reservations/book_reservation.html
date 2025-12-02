@@ -14,7 +14,8 @@
   {% if existing_reservation %}
     <div class="alert alert-info text-center">
       You already have a reservation.
-      <a href="{% url 'manage_reservation' existing_reservation.id %}" class="btn btn-reserve ms-2">
+      {% with existing_reservation.id as res_id %}
+      <a href="{% url 'manage_reservation' res_id %}" class="btn btn-reserve ms-2">
         Manage My Booking
       </a>
     </div>
@@ -51,25 +52,27 @@
 
 <!-- Delete Confirmation Modal -->
 {% if existing_reservation %}
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content chalkboard-modal">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to permanently delete your reservation? This action cannot be undone.
-      </div>
-      <div class="modal-footer">
-        <form method="post" action="{% url 'delete_reservation' existing_reservation.id %}">
-          {% csrf_token %}
-          <button type="submit" class="btn btn-danger">Yes, Delete</button>
-        </form>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Keep It</button>
+  {% with existing_reservation.id as res_id %}
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content chalkboard-modal">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to permanently delete your reservation? This action cannot be undone.
+          </div>
+          <div class="modal-footer">
+            <form method="post" action="{% url 'delete_reservation' res_id %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger">Yes, Delete</button>
+            </form>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Keep It</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  {% endwith %}
 {% endif %}
 {% endblock %}
