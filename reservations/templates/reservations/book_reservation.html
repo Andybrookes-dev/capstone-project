@@ -5,59 +5,25 @@
 <div class="container mt-5">
   <h2 class="mb-4">Book a Reservation</h2>
 
+  
+
+  {% if existing_reservation %}
+    <div class="alert alert-info text-center">
+      You already have a reservation.
+      <a href="{% url 'manage_reservation' existing_reservation.id %}" class="btn btn-reserve ms-2">
+        Manage My Booking
+      </a>
+    </div>
+  {% endif %}
+
   <form method="post" class="reservation-form">
     {% csrf_token %}
-
-    <!-- Reservation Name -->
-    <div class="mb-3">
-      <label for="id_reservation_name" class="form-label">Reservation Name</label>
-      {{ form.reservation_name }}
-    </div>
-
-    <!-- Date -->
-    <div class="mb-3">
-      <label for="id_date" class="form-label">Date</label>
-      {{ form.date }}
-    </div>
-
-    <!-- Time -->
-    <div class="mb-3">
-      <label for="id_time" class="form-label">Time</label>
-      {{ form.time }}
-    </div>
-
-    <!-- Table -->
-    <div class="mb-3">
-      <label for="id_table" class="form-label">Table</label>
-      {{ form.table }}
-    </div>
-
-    <!-- Party Size -->
-    <div class="mb-3">
-      <label for="id_party_size" class="form-label">Party Size</label>
-      {{ form.party_size }}
-    </div>
-
-    <!-- Phone -->
-    <div class="mb-3">
-      <label for="id_phone" class="form-label">Phone Number</label>
-      {{ form.phone }}
-    </div>
-
-    <!-- Email -->
-    <div class="mb-3">
-      <label for="id_email" class="form-label">Email Address</label>
-      {{ form.email }}
-    </div>
-
-    <!-- Special Requests -->
-    <div class="mb-3">
-      <label for="id_special_requests" class="form-label">Special Requests</label>
-      {{ form.special_requests }}
-    </div>
-
-    <!-- Submit -->
-    <button type="submit" class="btn btn-primary">Book Now</button>
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">
+      {% if existing_reservation %}Update Reservation{% else %}Book Now{% endif %}
+    </button>
   </form>
 </div>
+
+
 {% endblock %}

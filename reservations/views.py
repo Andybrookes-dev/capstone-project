@@ -21,19 +21,30 @@ def reservation_view(request):
 
 @login_required
 def book_reservation(request):
+    existing_reservation = Reservation.objects.filter(user=request.user).first()
+
     if request.method == "POST":
-        form = ReservationForm(request.POST)
+        form = ReservationForm(request.POST, instance=existing_reservation)
         if form.is_valid():
             reservation = form.save(commit=False)
             reservation.user = request.user
             reservation.save()
-            messages.success(request, "Your reservation has been booked successfully!")
+            if existing_reservation:
+                messages.success(request, "Your reservation has been updated successfully!")
+            else:
+                messages.success(request, "Your reservation has been booked successfully!")
             return redirect("reservation_success")
         else:
             messages.error(request, "There was an error with your booking. Please try again.")
     else:
-        form = ReservationForm()
-    return render(request, "reservations/book_reservation.html", {"form": form})
+        form = ReservationForm(instance=existing_reservation)
+
+    return render(request, "reservations/book_reservation.html", {
+        "form": form,
+        "existing_reservation": existing_reservation,
+    })
+
+
 
 def reservation_success(request):
     return render(request, "reservations/reservation_success.html")
@@ -78,3 +89,12 @@ def delete_reservation(request, pk):
         messages.success(request, "Reservation cancelled successfully!")
         return redirect("my_reservations")
     return render(request, "reservations/delete_reservation.html", {"reservation": reservation})
+
+@login_required
+def manage_reservation(request, pk):
+    reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
+    form = ReservationForm(instance=reservation)
+    return render(request, "reservations/manage_reservation.html", {
+        "reservation": reservation,
+        "form": form,
+    })

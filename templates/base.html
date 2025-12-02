@@ -1,5 +1,9 @@
 {% load static %}
 
+{% url 'home' as home_url %}
+{% url 'menu' as menu_url %}
+{% url 'book_reservation' as reservation_url %}
+{% url 'contact' as contact_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -11,61 +15,57 @@
     <title>{% block title %}Osteria Bella Notte{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS (via CDN) -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lora&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
+<body class="night-mode">
+
     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="{% url 'home' %}">Osteria Bella Notte</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <button id="toggleMode" class="btn btn-outline-light ms-3">🌙 Night</button>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="{% url 'home' %}">Osteria Bella Notte</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button id="toggleMode" class="btn btn-outline-light ms-3">🌙 Night</button>
 
-    <div id="mainNav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <!-- Home first -->
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == home_url %}active{% endif %}" href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'menu' %}">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'book_reservation' %}">Reservations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-        </li>
+        <div id="mainNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == home_url %}active{% endif %}" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == menu_url %}active{% endif %}" href="{% url 'menu' %}">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == reservation_url %}active{% endif %}" href="{% url 'book_reservation' %}">Reservations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
+            </li>
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-        {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
-          </li>
-        {% else %}
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
-          </li>
-        {% endif %}
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-
-   
     <!-- Main container -->
     <div class="container">
         {% if messages %}
@@ -78,13 +78,11 @@
           </div>
         {% endif %}
 
-        {% block content %}
-        <!-- Page-specific content goes here -->
-        {% endblock %}
+        {% block content %}{% endblock %}
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer mt-5 py-3">
       <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div>
           <div class="fw-bold">Osteria Bella Notte</div>
@@ -97,29 +95,50 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS (via CDN) -->
+    <!-- Toast Notification -->
+    <div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100">
+      <div id="cancelToast" class="toast chalkboard-toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            Reservation cancelled successfully.
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Day/Night Toggle -->
     <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const toggleBtn = document.getElementById("toggleMode");
-    const body = document.body;
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById("toggleMode");
+        const body = document.body;
 
-    // Default to night mode
-    body.classList.add("night-mode");
+        toggleBtn.addEventListener("click", function() {
+            if (body.classList.contains("night-mode")) {
+                body.classList.remove("night-mode");
+                body.classList.add("day-mode");
+                toggleBtn.textContent = "☀️ Day";
+            } else {
+                body.classList.remove("day-mode");
+                body.classList.add("night-mode");
+                toggleBtn.textContent = "🌙 Night";
+            }
+        });
 
-    toggleBtn.addEventListener("click", function() {
-        if (body.classList.contains("night-mode")) {
-            body.classList.remove("night-mode");
-            body.classList.add("day-mode");
-            toggleBtn.textContent = "☀️ Day";
-        } else {
-            body.classList.remove("day-mode");
-            body.classList.add("night-mode");
-            toggleBtn.textContent = "🌙 Night";
-        }
+        // Trigger toast if cancellation message exists
+        {% if messages %}
+          {% for message in messages %}
+            {% if "cancelled" in message|lower %}
+              var toastEl = document.getElementById('cancelToast');
+              var toast = new bootstrap.Toast(toastEl);
+              toast.show();
+            {% endif %}
+          {% endfor %}
+        {% endif %}
     });
-});
-</script>
-
+    </script>
 </body>
 </html>
