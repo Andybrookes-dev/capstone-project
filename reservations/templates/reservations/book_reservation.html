@@ -1,5 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}Book a Reservation{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'reservations/style.css' %}">
+{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
