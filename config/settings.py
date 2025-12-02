@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!     
 DEBUG = False  
 
-ALLOWED_HOSTS = ['.herokuapp.com',  '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['reservations-074f14c20f48.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -101,12 +101,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
+   
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.https://reservations-074f14c20f48.herokuapp.com/",
+    "https://reservations-074f14c20f48.herokuapp.com",
     "https://*.herokuapp.com"
 ]
+  
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
