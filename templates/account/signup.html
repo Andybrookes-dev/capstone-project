@@ -1,4 +1,30 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="auth-card">
+  <h2 class="auth-title">Create an Account</h2>
+
+  <form method="POST" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="auth-actions">
+      <button type="submit" class="btn-auth">Sign Up</button>
+    </div>
+  </form>
+
+  <p class="auth-footer">
+    Already have an account? <a href="{% url 'account_login' %}" class="auth-link">Log in here</a>
+  </p>
+</div>
+{% endblock %}
+
+
+
+
+{% comment %} {% extends "account/base.html" %}
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
@@ -17,4 +43,4 @@
     </p>
   </div>
 </div>
-{% endblock %}
+{% endblock %} {% endcomment %}
