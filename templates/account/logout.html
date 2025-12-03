@@ -1,4 +1,24 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Sign Out{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="signout-dialog">
+    <h2><span class="sign-text">Sign</span><span class="out-text">Out</span></h2>
+    <p class="signout-message">Are you sure you want to sign out?</p>
+    <div class="signout-actions">
+      <form method="POST" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn-signout">Sign Out</button>
+      </form>
+      <a href="{% url 'home' %}" class="btn-cancel">Cancel</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% comment %} {% extends "account/base.html" %}
 {% block title %}Sign Out{% endblock %}
 
 {% block content %}
@@ -14,4 +34,4 @@
     </form>
   </div>
 </div>
-{% endblock %}
+{% endblock %} {% endcomment %}
