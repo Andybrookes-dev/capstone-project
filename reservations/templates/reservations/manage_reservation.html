@@ -17,6 +17,70 @@
     <p><strong>Special Requests:</strong> {{ reservation.special_requests }}</p>
   </div>
 
+  <!-- Edit form -->
+  <form id="reservation-form" method="post" class="reservation-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+  </form>
+</div>
+
+<!-- Action buttons above footer -->
+<div class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center gap-3">
+    <button type="submit" form="reservation-form" class="btn btn-reserve">
+      Update Reservation
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelModal">
+      Cancel Reservation
+    </button>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content chalkboard-modal">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cancelModalLabel">Confirm Cancellation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to cancel your reservation? This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        {% with reservation.id as res_id %}
+          <form method="post" action="{% url 'delete_reservation' res_id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Yes, Cancel</button>
+          </form>
+        {% endwith %}
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Keep It</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+{% comment %} {% extends "base.html" %}
+{% block title %}Manage Reservation{% endblock %}
+
+{% block content %}
+<div class="manage-section container mt-5">
+  <h2 class="manage-title">Manage My Booking</h2>
+
+  <!-- Reservation details -->
+  <div class="reservation-details mb-4">
+    <p><strong>Name:</strong> {{ reservation.reservation_name }}</p>
+    <p><strong>Date:</strong> {{ reservation.date }}</p>
+    <p><strong>Time:</strong> {{ reservation.time }}</p>
+    <p><strong>Table:</strong> {{ reservation.table }}</p>
+    <p><strong>Party Size:</strong> {{ reservation.party_size }}</p>
+    <p><strong>Phone:</strong> {{ reservation.phone }}</p>
+    <p><strong>Email:</strong> {{ reservation.email }}</p>
+    <p><strong>Special Requests:</strong> {{ reservation.special_requests }}</p>
+  </div>
+
  <!-- Edit form -->
     <form id="reservation-form" method="post" class="reservation-form">
     {% csrf_token %}
@@ -57,4 +121,6 @@
     </div>
   </div>
 </div>
-{% endblock %}
+{% endblock %} {% endcomment %}
+
+

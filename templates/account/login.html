@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "account/base.html" %}
 {% block title %}Login{% endblock %}
 
 {% block content %}
@@ -27,8 +27,11 @@
 
   <div class="mt-3 text-center">
     <p class="text-muted">Don't have an account? 
-      <a href="{% url 'signup' %}">Sign up here</a>
+      <a href="{% url 'account_signup' %}">Sign up here</a>
     </p>
   </div>
 </div>
 {% endblock %}
+
+
+
