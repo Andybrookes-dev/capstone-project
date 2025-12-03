@@ -23,8 +23,8 @@ main {
 }
 
 /* Night/Day backgrounds */
-body.night-mode { background-image: url("../images/restaurant-night.png"); }
-body.day-mode { background-image: url("../images/restaurant-day.png"); }
+body.night-mode { background-image: url("../images/restaurant-night.webp"); }
+body.day-mode { background-image: url("../images/restaurant-day.webp"); }
 
 /* Footer (no fixed positioning now) */
 footer {
