@@ -2,20 +2,24 @@
 {% block title %}Reservation Confirmed{% endblock %}
 
 {% block content %}
-<div class="confirmation-card">
-  <h2 class="confirmation-title">Reservation Successful!</h2>
+<div class="auth-card">
+  <h2 class="auth-title">Reservation Successful!</h2>
 
-  <p class="confirmation-message">
-    <i class="fas fa-user"></i> {{ reservation.name }}<br>
-    <i class="fas fa-users"></i> Party of {{ reservation.party_size }} |
-    <i class="fas fa-phone"></i> {{ reservation.phone }} |
-    <i class="fas fa-envelope"></i> {{ reservation.email }}<br>
-    <i class="fas fa-calendar-alt"></i> {{ reservation.date }} at {{ reservation.time }}
+  <p class="reservation-message">
+    Name: {{ reservation.reservation_name }}<br>
+    Party size: {{ reservation.party_size }}<br>
+    Email: {{ reservation.email }}<br>
+    Phone: {{ reservation.phone }}<br>
+    Date: {{ reservation.date }}<br>
+    Time: {{ reservation.time }}<br>
+    {% if reservation.special_requests %}
+      Special requests: {{ reservation.special_requests }}
+    {% endif %}
   </p>
 
-  <div class="confirmation-actions">
-    <a href="{% url 'my_reservations' %}" class="btn-confirm">Back to My Reservations</a>
-    <a href="{% url 'home' %}" class="btn-confirm secondary">Home</a>
+  <div class="auth-actions">
+    <a href="{% url 'my_reservations' %}" class="btn-auth">Back to My Reservations</a>
+    <a href="{% url 'home' %}" class="btn-auth cancel-btn">Home</a>
   </div>
 </div>
 {% endblock %}

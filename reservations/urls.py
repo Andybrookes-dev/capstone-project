@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
     # Core pages
     path("", views.home, name="home"),
@@ -9,7 +10,7 @@ urlpatterns = [
 
     # Reservation flow
     path("book/", views.book_reservation, name="book_reservation"),
-    path("success/", views.reservation_success, name="reservation_success"),
+    path('success/<int:pk>/', views.reservation_success, name='reservation_success'),
     path("reservations/<int:pk>/manage/", views.manage_reservation, name="manage_reservation"),
 
 

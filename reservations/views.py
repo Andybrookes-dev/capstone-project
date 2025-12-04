@@ -30,7 +30,7 @@ def book_reservation(request):
                 messages.success(request, "Your reservation has been updated successfully!")
             else:
                 messages.success(request, "Your reservation has been booked successfully!")
-            return redirect("reservation_success")
+            return redirect("reservation_success", pk=reservation.pk)
         else:
             messages.error(request, "There was an error with your booking. Please try again.")
     else:
@@ -43,8 +43,13 @@ def book_reservation(request):
 
 
 
-def reservation_success(request):
-    return render(request, "reservations/reservation_success.html")
+# def reservation_success(request):
+#     return render(request, "reservations/reservation_success.html")
+
+def reservation_success(request, pk):
+    reservation = get_object_or_404(Reservation, pk=pk)
+    return render(request, 'reservations/reservation_success.html', {'reservation': reservation})
+
 
 def signup(request):
     if request.method == "POST":

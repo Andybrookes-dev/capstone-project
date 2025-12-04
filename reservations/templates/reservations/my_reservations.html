@@ -7,7 +7,7 @@
 
   {% for reservation in reservations %}
     <div class="reservation-entry">
-      <p><strong><i class="fas fa-user"></i> {{ reservation.name }}</strong></p>
+      <p><strong><i class="fas fa-user"></i> {{ reservation.reservation_name }}</strong></p>
       <p>
         <i class="fas fa-calendar-alt"></i> {{ reservation.date }} at {{ reservation.time }}<br>
         <i class="fas fa-users"></i> Party of {{ reservation.party_size }}<br>
