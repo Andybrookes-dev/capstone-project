@@ -1,21 +1,14 @@
 {% extends "base.html" %}
-{% block title %}Reservation Success{% endblock %}
+{% block title %}Reservation Confirmed{% endblock %}
 
 {% block content %}
-<div class="container mt-5 text-center">
-  <div class="card shadow-sm p-4">
-    <h2 class="text-success mb-3">Reservation Successful!</h2>
-    <p class="lead">Your booking has been confirmed. Thank you for choosing us!</p>
+<div class="confirmation-card">
+  <h2 class="confirmation-title">Reservation Successful!</h2>
+  <p class="confirmation-message">Your booking has been confirmed. Thank you for choosing us!</p>
 
-    <div class="mt-4">
-      <!-- Corrected link -->
-      <a href="{% url 'my_reservations' %}" class="btn btn-primary">
-        Back to My Reservations
-      </a>
-      <a href="{% url 'home' %}" class="btn btn-outline-secondary ms-2">
-        Home
-      </a>
-    </div>
+  <div class="confirmation-actions">
+    <a href="{% url 'my_reservations' %}" class="btn-confirm">Back to My Reservations</a>
+    <a href="{% url 'home' %}" class="btn-confirm secondary">Home</a>
   </div>
 </div>
 {% endblock %}

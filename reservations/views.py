@@ -87,10 +87,29 @@ def delete_reservation(request, pk):
         return redirect("my_reservations")
     return render(request, "reservations/delete_reservation.html", {"reservation": reservation})
 
+# @login_required
+# def manage_reservation(request, pk):
+#     reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
+#     form = ReservationForm(instance=reservation)
+#     return render(request, "reservations/manage_reservation.html", {
+#         "reservation": reservation,
+#         "form": form,
+#     })
 @login_required
 def manage_reservation(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
-    form = ReservationForm(instance=reservation)
+
+    if request.method == "POST":
+        form = ReservationForm(request.POST, instance=reservation)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Reservation updated successfully!")
+            return redirect("my_reservations")
+        else:
+            messages.error(request, "Please correct the errors below.")
+    else:
+        form = ReservationForm(instance=reservation)
+
     return render(request, "reservations/manage_reservation.html", {
         "reservation": reservation,
         "form": form,

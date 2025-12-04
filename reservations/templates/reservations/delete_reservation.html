@@ -1,21 +1,22 @@
 {% extends "base.html" %}
-{% block title %}Cancel Reservation{% endblock %}
+{% block title %}Confirm Cancellation{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-  <div class="card shadow-sm p-4">
-    <h2 class="text-danger mb-3">Cancel Reservation</h2>
-    <p class="lead">
-      Are you sure you want to cancel your reservation on 
-      <strong>{{ reservation.date }}</strong> at 
-      <strong>{{ reservation.time }}</strong>?
-    </p>
+<div class="delete-card">
+  <h2 class="delete-title">Cancel Reservation</h2>
+  <p class="delete-message">
+    Are you sure you want to cancel your reservation on 
+    <strong>{{ reservation.date }}</strong> at 
+    <strong>{{ reservation.time }}</strong>?<br>
+    <em>This action cannot be undone.</em>
+  </p>
 
-    <form method="post" class="mt-3">
-      {% csrf_token %}
-      <button type="submit" class="btn btn-danger">Yes, Cancel</button>
-      <a href="{% url 'my_reservations' %}" class="btn btn-secondary ms-2">No, Go Back</a>
-    </form>
-  </div>
+  <form method="post">
+    {% csrf_token %}
+    <div class="delete-actions">
+      <button type="submit" class="btn-delete">Yes, Cancel</button>
+      <a href="{% url 'my_reservations' %}" class="btn-delete secondary">No, Go Back</a>
+    </div>
+  </form>
 </div>
 {% endblock %}
