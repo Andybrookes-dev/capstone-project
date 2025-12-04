@@ -1,4 +1,3 @@
-/* Global flexbox layout */
 html, body {
     height: 100%;
     margin: 0;
@@ -17,15 +16,25 @@ body {
     transition: background-image 0.8s ease-in-out;
 }
 
-/* Flex grow for main content */
+
 main {
-    flex: 1; /* ensures content expands and scrolls */
+    flex: 1; 
 }
 
 /* Night/Day backgrounds */
-body.night-mode { background-image: url("../images/restaurant-night.png"); }
-body.day-mode { background-image: url("../images/restaurant-day.png"); }
+body.night-mode { background-image: url("../images/restaurant-night.webp"); }
+body.day-mode { background-image: url("../images/restaurant-day.webp"); }
 
+
+
+/* @media (max-width: 768px) {
+  /* body.night-mode,
+  body.day-mode {
+    /* background-attachment: scroll;  */
+    /* background-size: cover; 
+    background-position: top center; */
+  } */
+} */
 /* Footer (no fixed positioning now) */
 footer {
     background-color: rgba(28, 28, 28, 0.85);
@@ -187,4 +196,144 @@ footer .text-muted {
     background-color: #ffd700;
     color: #1c1c1c;
     text-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+
+.signout-dialog {
+  background-color: rgba(28, 28, 28, 0.85);
+  color: #fdf6e3;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  border: 2px dashed #ffd700;
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  font-family: 'Lora', serif;
+}
+
+.sign-text { color: #4682b4; font-weight: bold; }
+.out-text { color: #b22222; font-weight: bold; }
+
+.signout-message { font-size: 1.1rem; margin: 20px 0; }
+
+.signout-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn-signout {
+  background-color: #b22222;
+  color: #fdf6e3;
+  border: 2px solid #ffd700;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: 'Cinzel Decorative', serif;
+  transition: all 0.3s ease;
+}
+.btn-signout:hover { background-color: #ffd700; color: #1c1c1c; }
+
+.btn-cancel {
+  background-color: #333;
+  color: #fdf6e3;
+  border: 2px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: 'Cinzel Decorative', serif;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-cancel:hover { background-color: #ccc; color: #1c1c1c; }
+
+/* Reservation alert + Bootstrap info alert */
+.alert-info,
+.reservation-message {
+  background-color: rgba(28, 28, 28, 0.85) !important; /* chalkboard tone */
+  color: #fdf6e3 !important;
+  border: 2px dashed #ffd700 !important;
+  font-family: 'Lora', serif;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-card {
+  background-color: rgba(28, 28, 28, 0.85);
+  color: #fdf6e3;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  border: 2px dashed #ffd700;
+  max-width: 500px;
+  margin: 60px auto;
+  font-family: 'Lora', serif;
+}
+
+.auth-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-auth {
+  background-color: #8b0000;
+  color: #fdf6e3;
+  border: 2px solid #ffd700;
+  font-family: 'Cinzel Decorative', serif;
+  padding: 10px 24px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-auth:hover {
+  background-color: #ffd700;
+  color: #1c1c1c;
+}
+
+.auth-link {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-link:hover {
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255,255,255,0.6);
+}
+
+.auth-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-icons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-icons a {
+  color: #ffd700; /* trattoria gold */
+  font-size: 2rem;
+  margin: 0 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.3);
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
 }

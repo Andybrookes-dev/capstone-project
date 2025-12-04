@@ -58,7 +58,7 @@ def signup(request):
             messages.error(request, "Please correct the errors below.")
     else:
         form = UserCreationForm()
-    return render(request, "registration/signup.html", {"form": form})
+    return render(request, "account/signup.html", {"form": form})
 
 @login_required
 def my_reservations(request):

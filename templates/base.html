@@ -23,7 +23,7 @@
 
 <!-- Open Graph (for social sharing) -->
 <meta property="og:title" content="Osteria Bella Notte">
-<meta property="og:description" content="Book a reservation and enjoy authentic Italian dining under the stars.">
+<meta property="og:description" content="Book a reservation and enjoy authentic Italian dining in Lancaster City Centre.">
 <meta property="og:image" content="{% static 'images/restaurant-night.webp' %}">
 <meta property="og:url" content="https://reservations-074f14c20f48.herokuapp.com/">
 <meta property="og:type" content="website">
@@ -121,8 +121,9 @@
     </a>
   </div>
         <div class="text-muted">
-          © {{ now|date:"Y" }} Osteria Bella Notte 
-        </div>
+  © {% now "Y" %} Osteria Bella Notte
+  </div>
+
       </div>
     </footer>
 
