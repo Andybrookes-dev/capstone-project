@@ -4,7 +4,14 @@
 {% block content %}
 <div class="confirmation-card">
   <h2 class="confirmation-title">Reservation Successful!</h2>
-  <p class="confirmation-message">Your booking has been confirmed. Thank you for choosing us!</p>
+
+  <p class="confirmation-message">
+    <i class="fas fa-user"></i> {{ reservation.name }}<br>
+    <i class="fas fa-users"></i> Party of {{ reservation.party_size }} |
+    <i class="fas fa-phone"></i> {{ reservation.phone }} |
+    <i class="fas fa-envelope"></i> {{ reservation.email }}<br>
+    <i class="fas fa-calendar-alt"></i> {{ reservation.date }} at {{ reservation.time }}
+  </p>
 
   <div class="confirmation-actions">
     <a href="{% url 'my_reservations' %}" class="btn-confirm">Back to My Reservations</a>

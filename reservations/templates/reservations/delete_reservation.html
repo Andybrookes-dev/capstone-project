@@ -1,21 +1,22 @@
 {% extends "base.html" %}
-{% block title %}Confirm Cancellation{% endblock %}
+{% block title %}Cancel Reservation{% endblock %}
 
 {% block content %}
-<div class="delete-card">
-  <h2 class="delete-title">Cancel Reservation</h2>
-  <p class="delete-message">
-    Are you sure you want to cancel your reservation on 
-    <strong>{{ reservation.date }}</strong> at 
+<div class="auth-card">
+  <h2 class="auth-title"><i class="fas fa-exclamation-triangle"></i> Cancel Reservation</h2>
+
+  <p class="reservation-message">
+    Are you sure you want to cancel your reservation on  
+    <strong>{{ reservation.date }}</strong> at  
     <strong>{{ reservation.time }}</strong>?<br>
     <em>This action cannot be undone.</em>
   </p>
 
   <form method="post">
     {% csrf_token %}
-    <div class="delete-actions">
-      <button type="submit" class="btn-delete">Yes, Cancel</button>
-      <a href="{% url 'my_reservations' %}" class="btn-delete secondary">No, Go Back</a>
+    <div class="auth-actions">
+      <button type="submit" class="btn-auth" style="background-color:#dc143c;">Yes, Cancel</button>
+      <a href="{% url 'my_reservations' %}" class="btn-auth cancel-btn">No, Go Back</a>
     </div>
   </form>
 </div>
