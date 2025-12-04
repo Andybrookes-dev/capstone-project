@@ -2,6 +2,26 @@
 {% block title %}Edit Reservation{% endblock %}
 
 {% block content %}
+<div class="auth-card">
+  <h2 class="auth-title">Edit Your Reservation</h2>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="auth-actions">
+      <button type="submit" class="btn-auth">Save Changes</button>
+      <a href="{% url 'my_reservations' %}" class="btn-auth cancel-btn">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
+
+
+{% comment %} {% extends "base.html" %}
+{% block title %}Edit Reservation{% endblock %}
+
+{% block content %}
 <div class="container mt-5">
   <h2 class="mb-4">Edit Reservation</h2>
 
@@ -15,4 +35,4 @@
     </div>
   </form>
 </div>
-{% endblock %}
+{% endblock %} {% endcomment %}
