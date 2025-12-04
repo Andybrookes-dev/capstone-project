@@ -159,11 +159,11 @@ footer .text-muted {
 }
 
 .hero-overlay {
-    background-color: rgba(28, 28, 28, 0.75);
+    background-color: rgba(28, 28, 28, 0);
     padding: 40px;
     border-radius: 10px;
     display: inline-block;
-    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .hero-title {

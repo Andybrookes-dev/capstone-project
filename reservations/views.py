@@ -6,7 +6,7 @@ from django.contrib.auth import login
 from .forms import ReservationForm
 from .models import Reservation
 
-# Homepage
+
 def home(request):
     return render(request, "reservations/home.html")
 
@@ -43,8 +43,7 @@ def book_reservation(request):
 
 
 
-# def reservation_success(request):
-#     return render(request, "reservations/reservation_success.html")
+
 
 def reservation_success(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk)
@@ -92,14 +91,7 @@ def delete_reservation(request, pk):
         return redirect("my_reservations")
     return render(request, "reservations/delete_reservation.html", {"reservation": reservation})
 
-# @login_required
-# def manage_reservation(request, pk):
-#     reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
-#     form = ReservationForm(instance=reservation)
-#     return render(request, "reservations/manage_reservation.html", {
-#         "reservation": reservation,
-#         "form": form,
-#     })
+
 @login_required
 def manage_reservation(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
