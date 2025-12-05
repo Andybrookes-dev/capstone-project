@@ -27,15 +27,6 @@ body.day-mode { background-image: url("../images/restaurant-day.webp"); }
 
 
 
-/* @media (max-width: 768px) {
-  /* body.night-mode,
-  body.day-mode {
-    /* background-attachment: scroll;  */
-    /* background-size: cover; 
-    background-position: top center; */
-  } */
-} */
-/* Footer (no fixed positioning now) */
 footer {
     background-color: rgba(28, 28, 28, 0.85);
     color: #fdf6e3;
@@ -399,62 +390,3 @@ footer .text-muted {
   color: #fdf6e3;
 }
 
-/* .delete-card {
-  background-color: rgba(28, 28, 28, 0.85);
-  color: #fdf6e3;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
-  border: 2px solid #dc143c;
-  max-width: 600px;
-  margin: 60px auto;
-  text-align: center;
-  font-family: 'Lora', serif;
-}
-
-.delete-title {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 2rem;
-  color: #dc143c;
-  margin-bottom: 20px;
-}
-
-.delete-message {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #fdfce3;
-}
-
-.delete-actions {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.btn-delete {
-  background-color: #dc143c;
-  color: #fdf6e3;
-  border: 2px solid #ffd700;
-  font-family: 'Cinzel Decorative', serif;
-  padding: 10px 24px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.btn-delete:hover {
-  background-color: #ffd700;
-  color: #1c1c1c;
-}
-
-.btn-delete.secondary {
-  background-color: transparent;
-  color: #ffd700;
-  border: 2px solid #ffd700;
-}
-
-.btn-delete.secondary:hover {
-  background-color: #dc143c;
-  color: #fdf6e3;
-} */
