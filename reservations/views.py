@@ -111,3 +111,9 @@ def manage_reservation(request, pk):
         "reservation": reservation,
         "form": form,
     })
+
+@login_required
+def reservation_detail(request, pk):
+    # ✅ restricts access so only the owner can view their reservation
+    reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
+    return render(request, "reservations/detail.html", {"reservation": reservation})

@@ -31,3 +31,15 @@ class ReservationForm(forms.ModelForm):
                     "Reservations can only be made between 12:00 PM and 10:00 PM."
                 )
         return time
+    
+    def clean_email(self):
+        email = self.cleaned_data.get("email")
+        if not email:
+            raise forms.ValidationError("Email is required.")
+        return email
+
+    def clean_party_size(self):
+        party_size = self.cleaned_data.get("party_size")
+        if party_size < 1 or party_size > 50:
+            raise forms.ValidationError("Party size must be between 1 and 50.")
+        return party_size

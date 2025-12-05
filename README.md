@@ -82,6 +82,29 @@ The site includes a dynamic theme switcher that lets users toggle between **day*
 
 ## 5. Authentication & Roles
 - **Registration/Login:** Custom forms with and immersive styling.  
+### ✅ Reservation Form Validation
+The reservation form enforces several business rules to ensure data integrity and a smooth user experience:
+
+- **Date Validation:**  
+  Reservations cannot be made in the past. The form checks that the selected date is today or later.
+
+- **Time Validation:**  
+  Reservations are only allowed during service hours (12:00 PM – 10:00 PM). Any time outside this range is rejected.
+
+- **Email Validation:**  
+  An email address is required for every reservation. The form enforces this with Django’s `EmailField` and custom validation.
+
+- **Party Size Validation:**  
+  Party size must be greater than zero and capped at 50. This is enforced with both model validators (`MinValueValidator`, `MaxValueValidator`) and form‑level checks for user‑friendly error messages.
+
+- **Widgets:**  
+  - HTML5 date and time pickers (`type="date"`, `type="time"`) for intuitive input.  
+  - A multi‑line textarea for special requests.
+
+**Result:**  
+Users receive clear, friendly error messages when inputs are invalid, while the database remains protected by strict model‑level constraints.
+
+
 - **Roles:** Customer (default), Staff/Admin.  
 - **Login State Reflection:** Navbar shows login/logout, conditional rendering.  
 - **Access Control:** Restricted views based on role.
