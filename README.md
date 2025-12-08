@@ -12,19 +12,29 @@
 ## 2. UX Design Process
 - **Wireframes & Mockups:**
   - Homepage
-  - Reservation form & and success page.
+
+  ![Homepage](assets/hompepage.png)
+  - Reservation form.
+
+  ![Reservation form](assets/reservation-booking.png) 
+
+  Reservation success page.
+  ![success page](assets/reservation-successful.png)
   - Auth views (login, signup)
   - Admin dashboard
   - Confirmation and cancellation dialogs
 
+  
 - **Design Rationale:** Explanation of layouts, colours, and accessibility choices.  
 
-I wanted it to be a sophisticated but earthy Italian restuarant. Warm trattoria tones, chalkboard-style menus, gold accents for a touch of class.
+I wanted it to be a sophisticated but earthy Italian restuarant booking website. Warm trattoria tones, chalkboard-style menus, gold accents for a touch of class.
 Clear typography and immersive layout - font-family: 'Cinzel Decorative’, gives a great effect with the interlocking O’ in Booking. serif;
 
 - **Accessibility:** WCAG compliance, semantic HTML, alt text, ARIA labels.  
 - **Responsiveness:** Screenshots of mobile/tablet/desktop views.
 Optimized for mobile/tablet/desktop with touch-friendly buttons and adaptive layout
+-Apple devices mockup
+![apple-responsive-devices-mockup-capstone](assets/apple-responsive-devices-mockup-capstone.png)
 
 ---
 
