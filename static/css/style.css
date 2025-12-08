@@ -1,3 +1,124 @@
+/* Small phones (portrait ≤480px) */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 60px 20px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .btn.btn-reserve {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+/* Phones (landscape / small tablets 481–767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .btn.btn-reserve {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+  }
+  .menu-section {
+    padding: 30px;
+    margin: 20px 10px;
+  }
+  .auth-card, .confirmation-card, .signout-dialog {
+    max-width: 95%;
+    padding: 30px;
+  }
+}
+
+/* Tablets (768–1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-overlay {
+    max-width: 90%;
+    padding: 50px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  .btn.btn-reserve {
+    font-size: 1.4rem;
+    padding: 14px 36px;
+  }
+  .navbar-nav .nav-link {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }
+  .auth-actions, .confirmation-actions, .signout-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .social-icons a {
+    font-size: 1.6rem;
+    margin: 0 10px;
+  }
+}
+
+/* Laptops (1025–1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  .btn.btn-reserve {
+    font-size: 1.3rem;
+    padding: 14px 32px;
+  }
+}
+
+/* Large desktops (≥1441px) */
+@media (min-width: 1441px) {
+  .hero-section {
+    padding: 120px 0;
+  }
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.6rem;
+  }
+  .btn.btn-reserve {
+    font-size: 1.5rem;
+    padding: 16px 40px;
+  }
+  .menu-section {
+    max-width: 1200px;
+    margin: 60px auto;
+  }
+}
+
+
+
+
+
 html, body {
     height: 100%;
     margin: 0;
