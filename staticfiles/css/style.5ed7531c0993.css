@@ -510,29 +510,29 @@ footer .text-muted {
 }
 
 body.night-mode {
-  background-image: url("../images/restaurant-night-1920.webp");
+  background-image: url("../images/restaurant-night-1920.6f9a50e55332.webp");
 }
 @media (max-width: 1200px) {
   body.night-mode {
-    background-image: url("../images/restaurant-night-1200.webp");
+    background-image: url("../images/restaurant-night-1200.ae5236037db3.webp");
   }
 }
 @media (max-width: 600px) {
   body.night-mode {
-    background-image: url("../images/restaurant-night-600.webp");
+    background-image: url("../images/restaurant-night-600.9cc7124a3cb3.webp");
   }
 }
 
 body.day-mode {
-  background-image: url("../images/restaurant-day-1920.webp");
+  background-image: url("../images/restaurant-day-1920.b4d5414a11b8.webp");
 }
 @media (max-width: 1200px) {
   body.day-mode {
-    background-image: url("../images/restaurant-day-1200.webp");
+    background-image: url("../images/restaurant-day-1200.264a75c16275.webp");
   }
 }
 @media (max-width: 600px) {
   body.day-mode {
-    background-image: url("../images/restaurant-day-600.webp");
+    background-image: url("../images/restaurant-day-600.ec429f1090c1.webp");
   }
 }
