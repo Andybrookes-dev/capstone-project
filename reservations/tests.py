@@ -25,9 +25,7 @@ class ReservationModelTest(TestCase):
         self.assertEqual(str(self.reservation), expected_str)
 
 
-# -------------------------
-# View Tests
-# -------------------------
+
 class ReservationViewTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username="andy", password="testpass")
@@ -36,7 +34,7 @@ class ReservationViewTest(TestCase):
         """Home page should return 200 and use correct template"""
         response = self.client.get(reverse("home"))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "reservations/home.html")  # <-- corrected template
+        self.assertTemplateUsed(response, "reservations/home.html")  
 
     def test_reservation_page_requires_login(self):
         """Reservation page should redirect unauthenticated users to login"""
@@ -51,9 +49,7 @@ class ReservationViewTest(TestCase):
         self.assertTemplateUsed(response, "reservations/book_reservation.html")
 
 
-# -------------------------
-# Form Tests
-# -------------------------
+
 class ReservationFormTest(TestCase):
     def test_valid_form(self):
         """Form should be valid with proper data"""
@@ -64,7 +60,7 @@ class ReservationFormTest(TestCase):
             "party_size": 2,
             "email": "andy@example.com"
         })
-        self.assertTrue(form.is_valid(), msg=form.errors)  # show errors if it fails
+        self.assertTrue(form.is_valid(), msg=form.errors)  
 
     def test_invalid_form(self):
         """Form should be invalid with missing/incorrect data"""
@@ -73,7 +69,7 @@ class ReservationFormTest(TestCase):
             "date": "",
             "time": "",
             "party_size": 0,
-            "email": ""  # required
+            "email": ""  
         })
         self.assertFalse(form.is_valid())
 

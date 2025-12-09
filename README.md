@@ -2,8 +2,31 @@
 
 #  Restaurant Reservation  System 
 
+# Live Site https://reservations-074f14c20f48.herokuapp.com/ 
+
+## 📑 Table of Contents
+
+1. [Project Overview](#1-project-overview)
+2. [User Stories](#user-stories)
+3. [Agile Development](#-agile-development)
+4. [UX Design Process](#2-ux-design-process)
+5. [Color Scheme](#-color-scheme)
+6. [Database & Models](#3-database--models)
+7. [CRUD Functionality](#4-crud-functionality)
+8. [Authentication & Roles](#5-authentication--roles)
+9. [Testing](#6-testing)
+10. [Version Control & Security](#7-version-control--security)
+11. [Deployment](#8-deployment--httpsreservations-074f14c20f48herokuappcom-)
+12. [AI Integration & Reflection](#9-ai-integration--reflection)
+13. [Conclusion](#10-conclusion)
+14. [Acknowledgements](#-acknowledgements)
+
+
 ## 1. Project Overview
-**Purpose:** Full‑stack Django application for managing restaurant reservations.  
+**Purpose:** My project is a Full‑stack Django application for managing a fictional restaurant's reservations. 
+It allows customers to book, view, edit, and cancel reservations online and Provide admins with tools to manage capacity and confirm/cancel bookings. I lived in Italy for four years so I can confirm the menu is authentic(and quite reasonabley priced!)
+
+I aimed to deliver a polished, accessible, and responsive user experience across devices. 
 **Features:** Responsive front‑end, CRUD functionality, role‑based authentication, notifications, deployment to cloud.  
 **Tech Stack:** Django, Python, HTML/CSS/Bootstrap, Javascript, PostgreSQL, Cloudinary, Heroku.
 
@@ -207,6 +230,14 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 
 ## 6. Testing
 - **Python Tests:** Unit tests for models, views, forms; integration tests for booking flow.  
+**Model Test**
+![reservationmodeltest](assets/reservationmodeltest.png)
+
+**View Test**
+![Viewtest](assets/reservationviewtest.png)
+
+**Form Test**
+![formtest](assets/reservationformtest.png)
 - **JavaScript Tests (if applicable):** Client‑side validation checks.  
 - **Accessibility Tests:** Lighthouse/WAVE results.  
 - **Responsiveness Tests:** Screenshots across devices.  
@@ -248,7 +279,7 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 ---
 
 ## 10. Conclusion
-- **Summary:** How the project meets all capstone criteria. - I really enjoyed working on this project. I did find it challenging, but in a way that pushed me to improve as a developer. My initial deployments were pain free, but after styling the site, I spent about a day working out why I was getting a 500 error. It transpired that I had my static folder in my gitignore! I feel I have built an app that has CRUD functionality and the website reflects my creative design skills.
+- **Summary:**  I really enjoyed working on this project. I did find it challenging, but in a way that pushed me to improve as a developer. My initial deployments were pain free, but after styling the site, I spent about a day working out why I was getting a 500 error. It transpired that I had my static folder in my gitignore! I feel I have built an app that has CRUD functionality and the website reflects my creative design skills.
   
 - **Future Improvements:** Features to add -table availability checker and email notifications. I did intially look to add these but ultimatley i decided to keep my project simple for now. I will look to implement a similar model to *The OpenTable model which is used by many different restuarants). See below
 
