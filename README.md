@@ -9,6 +9,41 @@
 
 ---
 
+## User Stories
+**MUST HAVE**
+
+**User Story 1** - Reservation Booking - As a Customer
+I can book a reservation online with my details and party size.
+
+**User story 2** - Reservation Management - As a customer, I want to view, edit, or cancel my reservations,
+So that I can manage my bookings easily.
+
+**User Story 3** - Admin Reservation Control - As an admin, I want to view all reservations and confirm or cancel them, so that I can manage restaurant capacity and operations.
+
+**User Story 4** - Role-Based Authentication - As a user
+I want to register and log in securely, so that I can access features appropriate to my role (customer or admin).
+
+**User Story 5** - Responsive & Accessible Front-End - As a visitor, I want the site to be responsive and accessible, so that I can use it comfortably on any device and meet accessibility standards.
+
+**User Story 6** - Testing & Quality Assurance - As a developer, I want automated tests for models, views, and forms, so that I can ensure the application works correctly and is maintainable.
+
+**SHOULD HAVE**
+
+**User Story 7** - Deployment & Security - As a developer,
+I want to deploy the application to a cloud platform with environment variables, so that the app is secure, production‑ready, and matches the local version.
+
+**User Story 8** - AI Integration & Reflection - As a developer, I want to use AI tools for scaffolding, debugging, and optimization, so that I can accelerate development and document how AI improved workflow and UX.
+
+**User Story 9** - Consistent Layout & Styling - As a visitor, I want consistent styling across all pages,
+so that the site feels professional and easy to navigate.
+
+**User Story 10** - Code Structure & Maintainability - As a developer, I want modular, well‑structured code, So that the project is easy to maintain and extend.
+
+
+
+
+
+
 ## 2. UX Design Process
 - **Wireframes & Mockups:**
   - Homepage
