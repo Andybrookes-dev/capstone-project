@@ -1,0 +1,339 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Lora', serif;
+    color: #fdf6e3;
+    transition: background-image 0.8s ease-in-out;
+}
+
+
+main {
+    flex: 1; 
+}
+
+/* Night/Day backgrounds */
+body.night-mode { background-image: url("../images/restaurant-night.ddaceda942e3.webp"); }
+body.day-mode { background-image: url("../images/restaurant-day.10251a4f5a38.webp"); }
+
+
+
+/* @media (max-width: 768px) {
+  /* body.night-mode,
+  body.day-mode {
+    /* background-attachment: scroll;  */
+    /* background-size: cover; 
+    background-position: top center; */
+  } */
+} */
+/* Footer (no fixed positioning now) */
+footer {
+    background-color: rgba(28, 28, 28, 0.85);
+    color: #fdf6e3;
+    font-family: 'Lora', serif;
+    padding: 20px 0;
+    border-top: 3px solid #ffd700;
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.6);
+}
+footer .fw-bold {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.3rem;
+    color: #ffd700;
+}
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+footer a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255,255,255,0.6);
+}
+footer .text-muted {
+    color: #ccc !important;
+}
+
+/* Sticky action bar for reservation buttons */
+.action-bar {
+    position: sticky;
+    bottom: 0;
+    background: rgba(28, 28, 28, 0.95);
+    padding: 1rem;
+    border-top: 2px solid #ffd700;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+/* Chalkboard-style menu section */
+.menu-section {
+    background-color: #1c1c1c;
+    color: #fdf6e3;
+    padding: 40px;
+    border-radius: 8px;
+    margin: 40px 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    font-family: 'Shadows Into Light', cursive;
+}
+.menu-section h2 {
+    font-family: 'Cinzel Decorative', serif;
+    color: #ffd700;
+    border-bottom: 2px dashed #fdf6e3;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-container {
+    background-color: transparent; /* no white overlay */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Menu items */
+.menu-item {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.menu-item .name {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #fdf6e3;
+}
+.menu-item .price {
+    color: #90ee90;
+    font-style: italic;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #8b0000;
+    border-bottom: 3px solid #ffd700;
+    font-family: 'Cinzel Decorative', serif;
+}
+.navbar-brand {
+    color: #fff !important;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.navbar-brand:hover {
+    color: #ffd700 !important;
+}
+.navbar-nav .nav-link {
+    color: #fdf6e3 !important;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+    color: #ffd700 !important;
+    text-shadow: 0 0 5px rgba(255,215,0,0.6);
+}
+.navbar-nav .nav-link.active {
+    color: #ffd700 !important;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
+    border-bottom: 2px solid #ffd700;
+    font-weight: bold;
+}
+.navbar-toggler {
+    border-color: #ffd700;
+}
+
+
+/* Hero section */
+.hero-section {
+    position: relative;
+    padding: 100px 0;
+    color: #fdf6e3;
+    text-align: center;
+}
+
+.hero-overlay {
+    background-color: rgba(28, 28, 28, 0.75);
+    padding: 40px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 3rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Reserve button */
+.btn.btn-reserve {
+    background-color: #8b0000; /* deep red wine tone */
+    color: #fff;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border: 2px solid #ffd700;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+.btn.btn-reserve:hover {
+    background-color: #ffd700;
+    color: #1c1c1c;
+    text-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+
+.signout-dialog {
+  background-color: rgba(28, 28, 28, 0.85);
+  color: #fdf6e3;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  border: 2px dashed #ffd700;
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  font-family: 'Lora', serif;
+}
+
+.sign-text { color: #4682b4; font-weight: bold; }
+.out-text { color: #b22222; font-weight: bold; }
+
+.signout-message { font-size: 1.1rem; margin: 20px 0; }
+
+.signout-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn-signout {
+  background-color: #b22222;
+  color: #fdf6e3;
+  border: 2px solid #ffd700;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: 'Cinzel Decorative', serif;
+  transition: all 0.3s ease;
+}
+.btn-signout:hover { background-color: #ffd700; color: #1c1c1c; }
+
+.btn-cancel {
+  background-color: #333;
+  color: #fdf6e3;
+  border: 2px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: 'Cinzel Decorative', serif;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-cancel:hover { background-color: #ccc; color: #1c1c1c; }
+
+/* Reservation alert + Bootstrap info alert */
+.alert-info,
+.reservation-message {
+  background-color: rgba(28, 28, 28, 0.85) !important; /* chalkboard tone */
+  color: #fdf6e3 !important;
+  border: 2px dashed #ffd700 !important;
+  font-family: 'Lora', serif;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-card {
+  background-color: rgba(28, 28, 28, 0.85);
+  color: #fdf6e3;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  border: 2px dashed #ffd700;
+  max-width: 500px;
+  margin: 60px auto;
+  font-family: 'Lora', serif;
+}
+
+.auth-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-auth {
+  background-color: #8b0000;
+  color: #fdf6e3;
+  border: 2px solid #ffd700;
+  font-family: 'Cinzel Decorative', serif;
+  padding: 10px 24px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-auth:hover {
+  background-color: #ffd700;
+  color: #1c1c1c;
+}
+
+.auth-link {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-link:hover {
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255,255,255,0.6);
+}
+
+.auth-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-icons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-icons a {
+  color: #ffd700; /* trattoria gold */
+  font-size: 2rem;
+  margin: 0 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.3);
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}

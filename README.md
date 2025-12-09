@@ -77,11 +77,6 @@ The site includes a dynamic theme switcher that lets users toggle between **day*
           toggleBtn.textContent = "🌙 Night";
       }
   });
--**Day mode image:**
-![day mode image](assets/restaurant-day-1200.webp)
-
--**Night mode image:**
-![Night mode image](assets/restaurant-night-1200.webp)
 
 - **Constraints:**
   - Party size > 0  

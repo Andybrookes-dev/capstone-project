@@ -1,0 +1,143 @@
+/* Chalkboard-style menu section */
+.menu-section {
+    background-color: #1c1c1c; /* deep black chalkboard */
+    color: #fdf6e3; /* warm cream text */
+    padding: 40px;
+    border-radius: 8px;
+    margin: 40px 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    font-family: 'Shadows Into Light', cursive; /* handwritten chalk font */
+}
+
+/* Headings look like chalk titles */
+.menu-section h2 {
+    font-family: 'Cinzel Decorative', serif;
+    color: #ffd700; /* golden chalk highlight */
+    border-bottom: 2px dashed #fdf6e3;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Menu items */
+.menu-item {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Item name */
+.menu-item .name {
+    font-weight: bold;
+    color: #fdf6e3;
+}
+
+/* Item price */
+.menu-item .price {
+    color: #90ee90; /* light green chalk for prices */
+    font-style: italic;
+}
+
+.accordion-button {
+    background-color: #1c1c1c;
+    color: #ffd700;
+    font-family: 'Cinzel Decorative', serif;
+}
+.accordion-button:not(.collapsed) {
+    background-color: #3c2f2f;
+    color: #fff;
+}
+.accordion-body {
+    background-color: #1c1c1c;
+    color: #fdf6e3;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #8b0000; /* deep red wine tone */
+    border-bottom: 3px solid #ffd700; /* golden accent */
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.navbar-brand:hover {
+    color: #ffd700 !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fdf6e3 !important; /* cream text */
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffd700 !important; /* golden hover */
+    text-shadow: 0 0 5px rgba(255,215,0,0.6);
+}
+
+.navbar-toggler {
+    border-color: #ffd700;
+}
+
+
+/* Footer */
+footer {
+    background-color: #3c2f2f; /* dark rustic brown */
+    color: #fdf6e3;
+    font-family: 'Lora', serif;
+    padding: 30px 0;
+    border-top: 3px solid #ffd700;
+}
+
+footer .fw-bold {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.3rem;
+    color: #ffd700;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255,255,255,0.6);
+}
+
+footer .text-muted {
+    color: #ccc !important;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Lora', serif;
+    color: #fdf6e3;
+    transition: background-image 0.8s ease-in-out;
+}
+
+body.night-mode {
+    background-image: url("../images/restaurant-night.a8150d284a57.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.day-mode {
+    background-image: url("../images/restaurant-day.bb751089dc1c.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
