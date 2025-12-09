@@ -21,8 +21,13 @@
   Reservation success page.
   ![success page](assets/reservation-successful.png)
   - Auth views (login, signup)
+
   - Admin dashboard
+  ![Admin dashboard](assets/django%20admin.png)
+
+
   - Confirmation and cancellation dialogs
+  ![My reservation](assets/myreservation.png)
 
   
 - **Design Rationale:** Explanation of layouts, colours, and accessibility choices.  
@@ -44,8 +49,11 @@ Optimized for mobile/tablet/desktop with touch-friendly buttons and adaptive lay
 
 - **Custom Models:**
   - **Reservation** – guest info, date/time, party size, status.
-  - **Table** – number, capacity, location.
-  - **Post** – blog content, author, timestamps.
+
+  ![custom model](assets/reservation_model.png)
+
+  - **Table** – number, capacity, location.  *This will be a future addition 
+  - **Post** – blog content, author, timestamps. *This will be a future addition 
   ### 🌞🌙 Day/Night Mode Toggle
 The site includes a dynamic theme switcher that lets users toggle between **day** and **night** backgrounds:
 
@@ -69,6 +77,11 @@ The site includes a dynamic theme switcher that lets users toggle between **day*
           toggleBtn.textContent = "🌙 Night";
       }
   });
+-**Day mode image:**
+![day mode image](assets/restaurant-day-1200.webp)
+
+-**Night mode image:**
+![Night mode image](assets/restaurant-night-1200.webp)
 
 - **Constraints:**
   - Party size > 0  
@@ -156,7 +169,7 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 
 ## 9. AI Integration & Reflection
 - **Code Creation:** AI helped me with some ideas for my models, and views.  
-- **Debugging:** I did a lot of the debugging by eye but when I was stumped I used AI whichidentified/fixed migration errors.  
+- **Debugging:** I did a lot of the debugging by eye but when I was stumped I used AI which identified/fixed migration errors.  
 - **Optimization:** AI suggested UX improvements (messages framework, styling).  
 - **Reflection:**
   - How AI accelerated development  
