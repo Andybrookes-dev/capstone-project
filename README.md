@@ -1,6 +1,6 @@
 # capstone-project
 
-#  Restaurant Reservation & Blog System – Capstone Project
+#  Restaurant Reservation  System 
 
 ## 1. Project Overview
 **Purpose:** Full‑stack Django application for managing restaurant reservations.  
@@ -39,6 +39,27 @@ so that the site feels professional and easy to navigate.
 
 **User Story 10** - Code Structure & Maintainability - As a developer, I want modular, well‑structured code, So that the project is easy to maintain and extend.
 
+## 🚀 Agile Development
+
+I adopted an Agile methodology during the development of my **Restuarant reservation system**, using the **MoSCoW prioritisation method** to ensure essential features were delivered first. A public GitHub Project Board was used to manage user stories, tasks, and track progress.
+
+### 📋 Project Board Structure
+- **Backlog** – planned features and ideas  
+- **To Do** – items ready to be developed  
+- **In Progress** – features currently under development  
+- **Done** – completed and tested work  
+
+Each card contained a user story with clear acceptance criteria and was labelled as:
+- **Must Have** – essential functionality required for the application’s purpose  
+- **Should Have** – important improvements that enhance the experience but are not critical  
+- **Could Have** – optional enhancements to include if time permitted  
+
+
+
+### ✅ Benefits of This Approach
+- Delivered working features early and consistently  
+- Allowed transparent tracking and easy prioritisation adjustments  
+- Maintained flexibility to add improvements without losing sight of core functionality  
 
 
 
@@ -67,10 +88,30 @@ so that the site feels professional and easy to navigate.
   
 - **Design Rationale:** Explanation of layouts, colours, and accessibility choices.  
 
+
+## 🎨 Color Scheme
+
+- **Gold (#ffd700):** accents, borders, highlights
+- **Deep Red Wine (#8b0000):** navbar, reserve buttons
+- **Firebrick Red (#b22222):** sign-out actions
+- **Steel Blue (#4682b4):** sign-in highlights
+- **LimeGreen (#32CD32):** confirmation success
+- **PaleGreen (#90ee90):** menu prices
+- **Chalkboard Black (#1c1c1c):** menu & footer backgrounds
+- **Cream (#fdf6e3):** body text
+- **Muted Gray (#ccc):** secondary text
+- **White (#fff):** hover highlights
+
+
+![colorpallete](assets/color_pallete.png)
+
 I wanted it to be a sophisticated but earthy Italian restuarant booking website. Warm trattoria tones, chalkboard-style menus, gold accents for a touch of class.
-Clear typography and immersive layout - font-family: 'Cinzel Decorative’, gives a great effect with the interlocking O’ in Booking. serif;
+Clear typography and immersive layout - font-family: 'Cinzel Decorative’, gives a great effect with the interlocking O’ in Booking. Also used serif.
 
 - **Accessibility:** WCAG compliance, semantic HTML, alt text, ARIA labels.  
+
+![wcag](assets/w3c_markup_validation_service.png)
+
 - **Responsiveness:** Screenshots of mobile/tablet/desktop views.
 Optimized for mobile/tablet/desktop with touch-friendly buttons and adaptive layout
 -Apple devices mockup
@@ -202,15 +243,28 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 - **Debugging:** I did a lot of the debugging by eye but when I was stumped I used AI which identified/fixed migration errors.  
 - **Optimization:** AI suggested UX improvements (messages framework, styling).  
 - **Reflection:**
-  - How AI accelerated development  
-  - How AI supported debugging  
-  - How AI improved UX/performance  
-  - Impact on workflow efficiency
+  AI was particularly useful during the overall process, although you have to be mindful, use it in incremental steps, and understand the code when it starts telling you incorrect ways!
 
 ---
 
 ## 10. Conclusion
-- **Summary:** How the project meets all capstone criteria. - I really enjoyed working on this project. I did find it challenging, but in a way that pushed me to improve as a developer. My initial deployments were pain free, but after styling the site, I spent about a day working out why I was getting a 505. It transpired that I had my static folder in my gitignore! I feel I have built an app that has CRUD functionality and the website reflects my creative design skills.
+- **Summary:** How the project meets all capstone criteria. - I really enjoyed working on this project. I did find it challenging, but in a way that pushed me to improve as a developer. My initial deployments were pain free, but after styling the site, I spent about a day working out why I was getting a 500 error. It transpired that I had my static folder in my gitignore! I feel I have built an app that has CRUD functionality and the website reflects my creative design skills.
   
-- **Future Improvements:** Features to add (e.g., table availability checker, email notifications).  
-- **Acknowledgements:** Tools, resources, and AI support.
+- **Future Improvements:** Features to add -table availability checker and email notifications. I did intially look to add these but ultimatley i decided to keep my project simple for now. I will look to implement a similar model to *The OpenTable model which is used by many different restuarants). See below
+
+***OpenTable's Core Components in Coding Terms:**
+
+**Data Models (Entities):**
+
+- **Restaurant:** Stores details (location, menu, reviews, custom floor plan).
+
+- **Table:** Has attributes like table_id, capacity (seats), location_on_floor, status (occupied, free, reserved).
+
+- **Reservation:** reservation_id, guest_id, restaurant_id, party_size, time_slot, status (confirmed, seated, no-show), notes (special requests, guest history).
+
+- **Guest:** guest_id, name, contact_info, booking_history, preferences.
+
+- **AvailabilitySlot:** Represents specific 15-min blocks for a given table_id, tracking available_spots for different party_sizes.
+  
+## **Acknowledgements:** 
+A big thank you to Mark, Dillon and Tom - my tutors at Code institute for their awesome wisdom and support. I used Mark's brilliant masterclass as a guide when setting up the Django project and Dillon and Tom suggested ways to test the site's functionality. 
