@@ -536,3 +536,8 @@ body.day-mode {
     background-image: url("../images/restaurant-day-600.webp");
   }
 }
+
+/* Fix Font Awesome invalid rotate rule */
+.fa-rotate-by {
+  transform: none !important;
+}

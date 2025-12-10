@@ -10,47 +10,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
     <meta charset="UTF-8">
     <title>{% block title %}Osteria Bella Notte{% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Osteria Bella Notte — authentic trattoria experience with reservations, menus, and Italian charm.">
-<meta name="keywords" content="Italian restaurant, trattoria, reservations, pasta, wine, Bella Notte, Lancaster">
-<meta name="author" content="Osteria Bella Notte">
+    <meta name="keywords" content="Italian restaurant, trattoria, reservations, pasta, wine, Bella Notte, Lancaster">
+    <meta name="author" content="Osteria Bella Notte">
 
-<!-- Open Graph (for social sharing) -->
-<meta property="og:title" content="Osteria Bella Notte">
-<meta property="og:description" content="Book a reservation and enjoy authentic Italian dining in Lancaster City Centre.">
-<meta property="og:image" content="{% static 'images/restaurant-night.webp' %}">
-<meta property="og:url" content="https://reservations-074f14c20f48.herokuapp.com/">
-<meta property="og:type" content="website">
-<!-- Canonical URL -->
-<link rel="canonical" href="https://reservations-074f14c20f48.herokuapp.com/">
+    <!-- Open Graph (for social sharing) -->
+    <meta property="og:title" content="Osteria Bella Notte">
+    <meta property="og:description" content="Book a reservation and enjoy authentic Italian dining in Lancaster City Centre.">
+    <meta property="og:image" content="{% static 'images/restaurant-night.webp' %}">
+    <meta property="og:url" content="https://reservations-074f14c20f48.herokuapp.com/">
+    <meta property="og:type" content="website">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://reservations-074f14c20f48.herokuapp.com/">
 
+    <!-- Preconnects for faster CDN/font loading -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-    <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lora&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS (preloaded to avoid render-blocking) -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
 
-    <!-- Font Awesome 6.4.0 (stable version) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (with display=swap for faster text render) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lora&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
-
-
-    
+    <!-- Font Awesome (preloaded to reduce blocking) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-   
-
 </head>
 <body class="night-mode d-flex flex-column min-vh-100">
 
@@ -59,8 +56,7 @@
       <div class="container">
         <a class="navbar-brand fw-bold" href="{% url 'home' %}">Osteria Bella Notte</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
+        aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <button id="toggleMode" class="btn btn-outline-light ms-3">🌙 Night</button>
@@ -107,7 +103,6 @@
             {% endfor %}
           </div>
         {% endif %}
-
         {% block content %}{% endblock %}
     </main>
 
@@ -120,23 +115,12 @@
           <div>Open: Mon–Sun, 12:00–22:00</div>
         </div>
         <div class="social-icons">
-    <a href="https://www.facebook.com/login" target="_blank" aria-label="Facebook">
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://www.instagram.com/accounts/login/" target="_blank" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://twitter.com/login" target="_blank" aria-label="X (Twitter)">
-      <i class="fab fa-x-twitter"></i>
-    </a>
-    <a href="https://www.tiktok.com/login" target="_blank" aria-label="TikTok">
-      <i class="fab fa-tiktok"></i>
-    </a>
-  </div>
-        <div class="text-muted">
-  © {% now "Y" %} Osteria Bella Notte
-  </div>
-
+          <a href="https://www.facebook.com/login" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/accounts/login/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/login" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.tiktok.com/login" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <div class="text-muted">© {% now "Y" %} Osteria Bella Notte</div>
       </div>
     </footer>
 
@@ -144,15 +128,12 @@
     <div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100">
       <div id="cancelToast" class="toast chalkboard-toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
-          <div class="toast-body">
-            Reservation cancelled successfully.
-          </div>
+          <div class="toast-body">Reservation cancelled successfully.</div>
           <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
       </div>
     </div>
 
-    
     <!-- Day/Night Toggle -->
     <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -171,6 +152,7 @@
             }
         });
 
+   
         // Trigger toast if cancellation message exists
         {% if messages %}
           {% for message in messages %}
