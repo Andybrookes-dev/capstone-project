@@ -6,31 +6,132 @@
 
 ## 📑 Table of Contents
 
-1. [Project Overview](#1-project-overview)
-2. [User Stories](#user-stories)
+1. [Project Overview](#-project-overview)
+2. [UX Design Process](#-ux-design-process)
 3. [Agile Development](#-agile-development)
-4. [UX Design Process](#2-ux-design-process)
+4. [User Stories](#user-stories)
 5. [Color Scheme](#-color-scheme)
-6. [Database & Models](#3-database--models)
-7. [CRUD Functionality](#4-crud-functionality)
-8. [Authentication & Roles](#5-authentication--roles)
-9. [Testing](#6-testing)
-10. [Version Control & Security](#7-version-control--security)
+6. [Database & Models](#-database--models)
+7. [CRUD Functionality](#-crud-functionality)
+8. [Authentication & Roles](#-authentication--roles)
+9. [Testing](#-testing)
+10. [Version Control & Security](#-version-control--security)
 11. [Deployment](#8-deployment--httpsreservations-074f14c20f48herokuappcom-)
-12. [AI Integration & Reflection](#9-ai-integration--reflection)
-13. [Conclusion](#10-conclusion)
+12. [AI Integration & Reflection](#-ai-integration--reflection)
+13. [Conclusion](#-conclusion)
 14. [Acknowledgements](#-acknowledgements)
 
 
-## 1. Project Overview
+## Project Overview
 **Purpose:** My project is a Full‑stack Django application for managing a fictional restaurant's reservations. 
 It allows customers to book, view, edit, and cancel reservations online and Provide admins with tools to manage capacity and confirm/cancel bookings. I lived in Italy for four years so I can confirm the menu is authentic(and quite reasonabley priced!)
 
 I aimed to deliver a polished, accessible, and responsive user experience across devices. 
 **Features:** Responsive front‑end, CRUD functionality, role‑based authentication, notifications, deployment to cloud.  
 **Tech Stack:** Django, Python, HTML/CSS/Bootstrap, Javascript, PostgreSQL, Cloudinary, Heroku.
+## 2. UX Design Process
+**Wireframes & Mockups:**
+
+**Balsamiq Wireframe**
+
+![WIREFRAME](assets/balsamiqwireframes.png)
+
+**Apple devices mockup**
+![apple-responsive-devices-mockup-capstone](assets/apple-responsive-devices-mockup-capstone.png)
+
+**Homepage**
+
+  ![Homepage](assets/hompepage.png)
+
+**Menu**
+  
+  ![menu](assets/menuscreenshot.png)
+
+**Reservation form**
+
+  ![Reservation form](assets/reservation-booking.png) 
+
+**Reservation success page**
+  ![success page](assets/reservation-successful.png)
+
+**Contact Page**
+  ![contact](assets/contactscreenshot.png)
+
+  
+**Login Page**
+  ![login](assets/loginscreenshot.png)
+
+**Sign-up**
+
+  ![signup](assets/sign_up.png)
+**Sign-out**
+
+  ![signout](assets/signout.png)
+
+
+**My Reservations**
+  ![My reservation](assets/myreservation.png)
+
+**Admin dashboard**
+  ![Admin dashboard](assets/django%20admin.png)
+
+
+ 
+  
+- **Design Rationale:** Explanation of layouts, colours, and accessibility choices.  
+
+
+## 🎨 Color Scheme
+
+- **Gold (#ffd700):** accents, borders, highlights
+- **Deep Red Wine (#8b0000):** navbar, reserve buttons
+- **Firebrick Red (#b22222):** sign-out actions
+- **Steel Blue (#4682b4):** sign-in highlights
+- **LimeGreen (#32CD32):** confirmation success
+- **PaleGreen (#90ee90):** menu prices
+- **Chalkboard Black (#1c1c1c):** menu & footer backgrounds
+- **Cream (#fdf6e3):** body text
+- **Muted Gray (#ccc):** secondary text
+- **White (#fff):** hover highlights
+
+
+![colorpallete](assets/color_pallete.png)
+
+I wanted it to be a sophisticated but earthy Italian restuarant booking website. Warm trattoria tones, chalkboard-style menus, gold accents for a touch of class.
+Clear typography and immersive layout - font-family: 'Cinzel Decorative’, gives a great effect with the interlocking O’ in Booking. Also used serif.
+
+- **Accessibility:** WCAG compliance, semantic HTML, alt text, ARIA labels.  
+
+![wcag](assets/w3c_markup_validation_service.png)
+
+- **Responsiveness:** Screenshots of mobile/tablet/desktop views.
+Optimized for mobile/tablet/desktop with touch-friendly buttons and adaptive layout
 
 ---
+---
+## 🚀 Agile Development
+
+I adopted an Agile methodology during the development of my **Restuarant reservation system**, using the **MoSCoW prioritisation method** to ensure essential features were delivered first. A public GitHub Project Board was used to manage user stories, tasks, and track progress.
+
+### 📋 Project Board Structure
+- **Backlog** – planned features and ideas  
+- **To Do** – items ready to be developed  
+- **In Progress** – features currently under development  
+- **Done** – completed and tested work  
+
+Each card contained a user story with clear acceptance criteria and was labelled as:
+- **Must Have** – essential functionality required for the application’s purpose  
+- **Should Have** – important improvements that enhance the experience but are not critical  
+- **Could Have** – optional enhancements to include if time permitted  
+
+
+
+### ✅ Benefits of This Approach
+- Delivered working features early and consistently  
+- Allowed transparent tracking and easy prioritisation adjustments  
+- Maintained flexibility to add improvements without losing sight of core functionality  
+
+
 
 ## User Stories
 **MUST HAVE**
@@ -62,87 +163,12 @@ so that the site feels professional and easy to navigate.
 
 **User Story 10** - Code Structure & Maintainability - As a developer, I want modular, well‑structured code, So that the project is easy to maintain and extend.
 
-## 🚀 Agile Development
-
-I adopted an Agile methodology during the development of my **Restuarant reservation system**, using the **MoSCoW prioritisation method** to ensure essential features were delivered first. A public GitHub Project Board was used to manage user stories, tasks, and track progress.
-
-### 📋 Project Board Structure
-- **Backlog** – planned features and ideas  
-- **To Do** – items ready to be developed  
-- **In Progress** – features currently under development  
-- **Done** – completed and tested work  
-
-Each card contained a user story with clear acceptance criteria and was labelled as:
-- **Must Have** – essential functionality required for the application’s purpose  
-- **Should Have** – important improvements that enhance the experience but are not critical  
-- **Could Have** – optional enhancements to include if time permitted  
-
-
-
-### ✅ Benefits of This Approach
-- Delivered working features early and consistently  
-- Allowed transparent tracking and easy prioritisation adjustments  
-- Maintained flexibility to add improvements without losing sight of core functionality  
 
 
 
 
 
-## 2. UX Design Process
-- **Wireframes & Mockups:**
-  - Homepage
-
-  ![Homepage](assets/hompepage.png)
-  - Reservation form.
-
-  ![Reservation form](assets/reservation-booking.png) 
-
-  Reservation success page.
-  ![success page](assets/reservation-successful.png)
-  - Auth views (login, signup)
-
-  - Admin dashboard
-  ![Admin dashboard](assets/django%20admin.png)
-
-
-  - Confirmation and cancellation dialogs
-  ![My reservation](assets/myreservation.png)
-
-  
-- **Design Rationale:** Explanation of layouts, colours, and accessibility choices.  
-
-
-## 🎨 Color Scheme
-
-- **Gold (#ffd700):** accents, borders, highlights
-- **Deep Red Wine (#8b0000):** navbar, reserve buttons
-- **Firebrick Red (#b22222):** sign-out actions
-- **Steel Blue (#4682b4):** sign-in highlights
-- **LimeGreen (#32CD32):** confirmation success
-- **PaleGreen (#90ee90):** menu prices
-- **Chalkboard Black (#1c1c1c):** menu & footer backgrounds
-- **Cream (#fdf6e3):** body text
-- **Muted Gray (#ccc):** secondary text
-- **White (#fff):** hover highlights
-
-
-![colorpallete](assets/color_pallete.png)
-
-I wanted it to be a sophisticated but earthy Italian restuarant booking website. Warm trattoria tones, chalkboard-style menus, gold accents for a touch of class.
-Clear typography and immersive layout - font-family: 'Cinzel Decorative’, gives a great effect with the interlocking O’ in Booking. Also used serif.
-
-- **Accessibility:** WCAG compliance, semantic HTML, alt text, ARIA labels.  
-
-![wcag](assets/w3c_markup_validation_service.png)
-
-- **Responsiveness:** Screenshots of mobile/tablet/desktop views.
-Optimized for mobile/tablet/desktop with touch-friendly buttons and adaptive layout
--Apple devices mockup
-![apple-responsive-devices-mockup-capstone](assets/apple-responsive-devices-mockup-capstone.png)
-
----
-
-## 3. Database & Models
+## Database & Models
 - **Schema Diagram (ER):** Show relationships between User, Reservation, Table, Post.
 ![ERD](assets/ERD.png)
 
@@ -188,7 +214,7 @@ The site includes a dynamic theme switcher that lets users toggle between **day*
 
 ---
 
-## 4. CRUD Functionality
+## CRUD Functionality
 - **Create:** Reservation form pre-filled user data
 - **Read:** Reservation list,   
 - **Update:** Edit reservation/post.  
@@ -197,7 +223,7 @@ The site includes a dynamic theme switcher that lets users toggle between **day*
 
 ---
 
-## 5. Authentication & Roles
+## Authentication & Roles
 - **Registration/Login:** Custom forms with and immersive styling.  
 ### ✅ Reservation Form Validation
 The reservation form enforces several business rules to ensure data integrity and a smooth user experience:
@@ -228,7 +254,7 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 
 ---
 
-## 6. Testing
+## Testing
 - **Python Tests:** Unit tests for models, views, forms; integration tests for booking flow.  
 **Model Test**
 ![reservationmodeltest](assets/reservationmodeltest.png)
@@ -247,7 +273,7 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 
 ---
 
-## 7. Version Control & Security
+## Version Control & Security
 - **GitHub Repo:** Link to repository.  https://github.com/Andybrookes-dev/capstone-project.git
 - **Commit History:** Screenshots showing descriptive commit messages.  
 - **Secure Code Management:**
@@ -257,7 +283,7 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 
 ---
 
-## 8. Deployment : https://reservations-074f14c20f48.herokuapp.com/ 
+## Deployment : https://reservations-074f14c20f48.herokuapp.com/ 
 - **Platform:** Heroku (with Postgres + Cloudinary).  
 - **Deployment Steps:**
   1. Install Heroku CLI  
@@ -269,7 +295,7 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 
 ---
 
-## 9. AI Integration & Reflection
+## AI Integration & Reflection
 - **Code Creation:** AI helped me with some ideas for my models, and views.  
 - **Debugging:** I did a lot of the debugging by eye but when I was stumped I used AI which identified/fixed migration errors.  
 - **Optimization:** AI suggested UX improvements (messages framework, styling).  
@@ -278,7 +304,7 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 
 ---
 
-## 10. Conclusion
+## Conclusion
 - **Summary:**  I really enjoyed working on this project. I did find it challenging, but in a way that pushed me to improve as a developer. My initial deployments were pain free, but after styling the site, I spent about a day working out why I was getting a 500 error. It transpired that I had my static folder in my gitignore! I feel I have built an app that has CRUD functionality and the website reflects my creative design skills.
   
 - **Future Improvements:** Features to add -table availability checker and email notifications. I did intially look to add these but ultimatley i decided to keep my project simple for now. I will look to implement a similar model to *The OpenTable model which is used by many different restuarants). See below
