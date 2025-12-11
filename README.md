@@ -270,12 +270,21 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 
 **Form Test**
 ![formtest](assets/reservationformtest.png)
-- **JavaScript Tests (if applicable):** Client‑side validation checks.  
-- **Accessibility Tests:** Lighthouse/WAVE results.  
-- **Responsiveness Tests:** Screenshots across devices.  
-- **Testing Documentation:**
-  - Table of test cases, expected vs actual results.
-  - Key findings and fixes.
+
+**Accessibility Tests:** 
+
+**Lighthouse/WAVE results**
+
+**Desktop**
+
+![desktop](assets/lighthousedesktop.png)
+
+
+**Mobile Device**
+
+![mobile](assets/lighthousemobile.png)
+
+I am happy with these results.
 
 ---
 
