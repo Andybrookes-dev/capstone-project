@@ -24,7 +24,7 @@
 
 ## Project Overview
 **Purpose:** My project is a Full‑stack Django application for managing a fictional restaurant's reservations. 
-It allows customers to book, view, edit, and cancel reservations online and Provide admins with tools to manage capacity and confirm/cancel bookings. I lived in Italy for four years so I can confirm the menu is authentic(and quite reasonabley priced!)
+It allows customers to book, view, edit, and cancel reservations online and provide admins with tools to manage capacity and confirm/cancel bookings. I lived in Italy for four years so I can confirm the menu is authentic(and quite reasonabley priced!)
 
 I aimed to deliver a polished, accessible, and responsive user experience across devices. 
 **Features:** Responsive front‑end, CRUD functionality, role‑based authentication, notifications, deployment to cloud.  
@@ -133,7 +133,7 @@ Each card contained a user story with clear acceptance criteria and was labelled
 
 
 
-## User Stories
+## User Stories https://github.com/users/Andybrookes-dev/projects/5
 **MUST HAVE**
 
 **User Story 1** - Reservation Booking - As a Customer
@@ -169,10 +169,16 @@ so that the site feels professional and easy to navigate.
 
 
 ## Database & Models
-- **Schema Diagram (ER):** Show relationships between User, Reservation, Table, Post.
-![ERD](assets/ERD.png)
+ **Initial planned Schema Diagram (ERD):** Showing relationships between User, Reservation, Table, Post.
+![ERD](assets/ERD.png)  
 
-- **Custom Models:**
+
+**Stripped back ERD for deployed app:** Showing relationships between User and Reservation.
+![erdsimple](assets/erdsimple.png)
+
+
+
+ **Custom Models:**
   - **Reservation** – guest info, date/time, party size, status.
 
   ![custom model](assets/reservation_model.png)
