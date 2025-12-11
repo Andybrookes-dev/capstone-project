@@ -22,36 +22,36 @@
     </div>
   {% endif %}
 
-  <!-- Reservation form -->
+ 
   <form id="reservation-form" method="post" class="reservation-form">
     {% csrf_token %}
     {{ form.as_p }}
   </form>
 </div>
 
-<!-- Action buttons ABOVE footer -->
+
 <div class="container my-5">
   <div class="d-flex justify-content-center gap-3">
-    <!-- Update / Book button -->
+    
     <button type="submit" form="reservation-form" class="btn btn-primary">
       {% if existing_reservation %}Update Reservation{% else %}Book Now{% endif %}
     </button>
 
-    <!-- Delete button triggers modal -->
+    
     {% if existing_reservation %}
       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
         Delete Reservation
       </button>
     {% endif %}
 
-    <!-- Cancel button -->
+    
     <a href="{% url 'home' %}" class="btn btn-secondary">
       Cancel
     </a>
   </div>
 </div>
 
-<!-- Delete Confirmation Modal -->
+
 {% if existing_reservation %}
   {% with existing_reservation.id as res_id %}
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">

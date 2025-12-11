@@ -1,4 +1,4 @@
-/* Small phones (portrait ≤480px) */
+
 @media (max-width: 480px) {
   .hero-section {
     padding: 60px 20px;
@@ -27,7 +27,7 @@
   }
 }
 
-/* Phones (landscape / small tablets 481–767px) */
+
 @media (min-width: 481px) and (max-width: 767px) {
   .hero-title {
     font-size: 2.3rem;
@@ -49,7 +49,7 @@
   }
 }
 
-/* Tablets (768–1024px) */
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .hero-overlay {
     max-width: 90%;
@@ -80,7 +80,7 @@
   }
 }
 
-/* Laptops (1025–1440px) */
+
 @media (min-width: 1025px) and (max-width: 1440px) {
   .hero-title {
     font-size: 2.8rem;
@@ -94,7 +94,7 @@
   }
 }
 
-/* Large desktops (≥1441px) */
+
 @media (min-width: 1441px) {
   .hero-section {
     padding: 120px 0;
@@ -171,7 +171,7 @@ footer .text-muted {
     color: #ccc !important;
 }
 
-/* Sticky action bar for reservation buttons */
+
 .action-bar {
     position: sticky;
     bottom: 0;
@@ -182,7 +182,6 @@ footer .text-muted {
     z-index: 1000;
 }
 
-/* Chalkboard-style menu section */
 .menu-section {
     background-color: #1c1c1c;
     color: #fdf6e3;
@@ -201,12 +200,12 @@ footer .text-muted {
 }
 
 .menu-container {
-    background-color: transparent; /* no white overlay */
+    background-color: transparent; 
     padding: 20px;
     border-radius: 8px;
 }
 
-/* Menu items */
+
 .menu-item {
     margin-bottom: 15px;
     font-size: 1.2rem;
@@ -223,7 +222,7 @@ footer .text-muted {
     font-style: italic;
 }
 
-/* Navbar */
+
 .navbar {
     background-color: #8b0000;
     border-bottom: 3px solid #ffd700;
@@ -258,7 +257,7 @@ footer .text-muted {
 }
 
 
-/* Hero section */
+
 .hero-section {
     position: relative;
     padding: 100px 0;
@@ -289,9 +288,9 @@ footer .text-muted {
     text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
 }
 
-/* Reserve button */
+
 .btn.btn-reserve {
-    background-color: #8b0000; /* deep red wine tone */
+    background-color: #8b0000; 
     color: #fff;
     font-family: 'Cinzel Decorative', serif;
     font-size: 1.2rem;
@@ -356,10 +355,10 @@ footer .text-muted {
 }
 .btn-cancel:hover { background-color: #ccc; color: #1c1c1c; }
 
-/* Reservation alert + Bootstrap info alert */
+
 .alert-info,
 .reservation-message {
-  background-color: rgba(28, 28, 28, 0.85) !important; /* chalkboard tone */
+  background-color: rgba(28, 28, 28, 0.85) !important; 
   color: #fdf6e3 !important;
   border: 2px dashed #ffd700 !important;
   font-family: 'Lora', serif;
@@ -436,7 +435,7 @@ footer .text-muted {
 }
 
 .social-icons a {
-  color: #ffd700; /* trattoria gold */
+  color: #ffd700; 
   font-size: 2rem;
   margin: 0 15px;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -537,7 +536,7 @@ body.day-mode {
   }
 }
 
-/* Fix Font Awesome invalid rotate rule */
+
 .fa-rotate-by {
   transform: none !important;
 }
