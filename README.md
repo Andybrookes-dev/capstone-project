@@ -312,13 +312,25 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 **Lighthouse results**
 
 **Desktop**
-
+initai tests
 ![desktop](assets/lighthousedesktop.png)
 
+**Desktop Final deployment**
 
-**Mobile Device**
+![desktop](assets/newlighthousedesktop.png)
+
+
+
+**Mobile Device inital testing**
 
 ![mobile](assets/lighthousemobile.png)
+
+**Mobile Device Final Deployment**
+
+![mobiledeployment](assets/mobilelighthouse.png)
+
+Happy with the performance. The best practice is a little out of my control as it's to do do with know error in the fonts awesome library and not my code.
+
 
 **Jigsaw CSS Checker**
 ![jigsaw](assets/jigsaw.png)
