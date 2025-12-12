@@ -1,6 +1,6 @@
 # capstone-project
 
-#  Restaurant Reservation  System 
+#  Restaurant Reservation System 
 
 # Live Site https://reservations-074f14c20f48.herokuapp.com/ 
 
@@ -24,7 +24,7 @@
 
 ## Project Overview
 **Purpose:** My project is a Full‑stack Django application for managing a fictional restaurant's reservations. 
-It allows customers to book, view, edit, and cancel reservations online and provide admins with tools to manage capacity and confirm/cancel bookings. I lived in Italy for four years so I can confirm the menu is authentic(and quite reasonabley priced!)
+It allows customers to book, view, edit, and cancel reservations online and provide admins with tools to manage capacity and confirm/cancel bookings. I lived in Italy for four years so I can confirm the menu is authentic(and quite reasonably priced!)
 
 I aimed to deliver a polished, accessible, and responsive user experience across devices. 
 **Features:** Responsive front‑end, CRUD functionality, role‑based authentication, notifications, deployment to cloud.  
@@ -72,8 +72,36 @@ I aimed to deliver a polished, accessible, and responsive user experience across
 **My Reservations**
   ![My reservation](assets/myreservation.png)
 
+**Manage My Reservations**
+When a user has previously made a reservation - You can see this view
+
+  ![managemybooking](assets/managemyreservation.png)
+
+
+There are two ways to manage the reservations - either click the manage my booking button at the top, or click update/delete reservation at the bottom using the fields on display
+
+ **Manage my booking button view**
+
+  ![managemybookingbutton](assets/managemybookingbutton.png)
+
+**Confirm Deletion**
+  ![confirmdeletion](assets/confirmdeletion.png)
+
+**Cancel Reservation - From manage my booking button**
+
+![cancelreservation](assets/cancelreservation.png)
+In a future update I may change this so there is only one way to edit, but at the momemt both ways are fully functional.
+
+**Reservation Cancelled success page**
+
+  ![reservationcancelled](assets/reservationcancelled.png)
+
+
 **Admin dashboard**
+
   ![Admin dashboard](assets/django%20admin.png)
+
+  
 
 
  
@@ -97,19 +125,17 @@ I aimed to deliver a polished, accessible, and responsive user experience across
 
 ![colorpallete](assets/color_pallete.png)
 
-I wanted it to be a sophisticated but earthy Italian restuarant booking website. Warm trattoria tones, chalkboard-style menus, gold accents for a touch of class.
-Clear typography and immersive layout - font-family: 'Cinzel Decorative’, gives a great effect with the interlocking O’ in Booking. Also used serif.
+I aimed to create a restaurant booking experience that feels both sophisticated and grounded in authentic Italian warmth. I lived in Italy for 4 years and have experienced lots of authentic dining. The design draws on classic trattoria aesthetics — rich, earthy tones, chalkboard‑style elements, and subtle gold accents to add a sense of elegance. Typography plays a key role: Cinzel Decorative provides a distinctive character (especially with the interlocking “O” in “Booking”), while complementary serif fonts reinforce the traditional, welcoming atmosphere. The overall layout is immersive, clean, and intentionally crafted to reflect the charm of an upscale yet homely Italian dining space.
 
 - **Accessibility:** WCAG compliance, semantic HTML, alt text, ARIA labels.  
 
 ![wcag](assets/w3c_markup_validation_service.png)
 
-- **Responsiveness:** Screenshots of mobile/tablet/desktop views.
-Optimized for mobile/tablet/desktop with touch-friendly buttons and adaptive layout
+
 
 ---
 ---
-## 🚀 Agile Development
+##  Agile Development
 
 I adopted an Agile methodology during the development of my **Restuarant reservation system**, using the **MoSCoW prioritisation method** to ensure essential features were delivered first. A public GitHub Project Board was used to manage user stories, tasks, and track progress.
 
@@ -126,7 +152,7 @@ Each card contained a user story with clear acceptance criteria and was labelled
 
 
 
-### ✅ Benefits of This Approach
+###  Benefits of This Approach
 - Delivered working features early and consistently  
 - Allowed transparent tracking and easy prioritisation adjustments  
 - Maintained flexibility to add improvements without losing sight of core functionality  
@@ -176,7 +202,7 @@ so that the site feels professional and easy to navigate.
 **Stripped back ERD for deployed app:** Showing relationships between User and Reservation.
 ![erdsimple](assets/erdsimple.png)
 
-
+This is how i have deployed my app. In future versions I may introduce the table and blog models.
 
  **Custom Models:**
   - **Reservation** – guest info, date/time, party size, status.
@@ -187,6 +213,16 @@ so that the site feels professional and easy to navigate.
   - **Post** – blog content, author, timestamps. *This will be a future addition 
   ### 🌞🌙 Day/Night Mode Toggle
 The site includes a dynamic theme switcher that lets users toggle between **day** and **night** backgrounds:
+
+**Day Background** 
+
+![daybackgound](assets/day_background.png)
+
+**Night Background**
+
+![nightbackground](assets/night_background.png)
+
+*Both images were generated using AI from my prompts.
 
 - **CSS Classes:**  
   - `body.day-mode` → applies the daytime background image.  
@@ -324,23 +360,11 @@ Overall, I am happy with these results.
 ---
 
 ## Conclusion
-- **Summary:**  I really enjoyed working on this project. I did find it challenging, but in a way that pushed me to improve as a developer. My initial deployments were pain free, but after styling the site, I spent about a day working out why I was getting a 500 error. It transpired that I had my static folder in my gitignore! I feel I have built an app that has CRUD functionality and the website reflects my creative design skills.
+- **Summary:**  I really enjoyed working on this project. I did find it challenging, but in a way that pushed me to improve as a developer. I feel I have built an app that has CRUD functionality and the website reflects my creative design skills. This project has strengthened my confidence in working with Django, front‑end styling, and problem‑solving under real constraints, and it’s given me a solid foundation to build on in future work.
   
-- **Future Improvements:** Features to add -table availability checker and email notifications. I did intially look to add these but ultimatley i decided to keep my project simple for now. I will look to implement a similar model to *The OpenTable model which is used by many different restuarants). See below
+- **Future Improvements:** 
+There are several features I’d like to explore in future versions of this project, including a table availability checker and automated email notifications. I initially planned to implement these, but chose to keep the scope focused and stable for now. I may also refine the “Manage My Bookings” page so there’s a single, streamlined method for editing reservations. With everything functioning reliably at this stage, and given my time constraints, I didn’t want to risk breaking something. Looking ahead, I’d like to evolve the system toward a model similar to **OpenTable**, which is widely used across the restaurant industry. 
 
-***OpenTable's Core Components in Coding Terms:**
 
-**Data Models (Entities):**
-
-- **Restaurant:** Stores details (location, menu, reviews, custom floor plan).
-
-- **Table:** Has attributes like table_id, capacity (seats), location_on_floor, status (occupied, free, reserved).
-
-- **Reservation:** reservation_id, guest_id, restaurant_id, party_size, time_slot, status (confirmed, seated, no-show), notes (special requests, guest history).
-
-- **Guest:** guest_id, name, contact_info, booking_history, preferences.
-
-- **AvailabilitySlot:** Represents specific 15-min blocks for a given table_id, tracking available_spots for different party_sizes.
-  
 ## **Acknowledgements:** 
-A big thank you to Mark, Dillon and Tom - my tutors at Code institute for their awesome wisdom and support. I used Mark's brilliant masterclass as a guide when setting up the Django project and Dillon and Tom suggested ways to test the site's functionality. 
+A big thank you to Mark, Dillon and Tom - my tutors at The Code institute for their awesome wisdom and support. I used Mark's brilliant masterclass as a guide when setting up the Django project and Dillon and Tom suggested ways to test the site's functionality. The course learning materials were a great guide and Co-pilot was very helpful along the way!
