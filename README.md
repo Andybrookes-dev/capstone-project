@@ -273,7 +273,7 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 
 **Accessibility Tests:** 
 
-**Lighthouse/WAVE results**
+**Lighthouse results**
 
 **Desktop**
 
@@ -284,7 +284,11 @@ Users receive clear, friendly error messages when inputs are invalid, while the 
 
 ![mobile](assets/lighthousemobile.png)
 
-I am happy with these results.
+**Jigsaw CSS Checker**
+![jigsaw](assets/jigsaw.png)
+This error is a known fault of the fontawesome library and doesnt effect performance. 
+
+Overall, I am happy with these results.
 
 ---
 

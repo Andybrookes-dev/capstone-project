@@ -540,3 +540,32 @@ body.day-mode {
 .fa-rotate-by {
   transform: none !important;
 }
+
+.chalkboard-modal {
+  --bs-modal-bg: rgba(28, 28, 28, 0.95) !important;
+  --bs-modal-color: #fdf6e3 !important;
+  --bs-modal-border-color: #ffd700 !important;
+  --bs-modal-border-width: 2px !important;
+  --bs-modal-border-radius: 12px !important;
+  --bs-modal-padding: 30px !important;
+}
+.chalkboard-modal .modal-title {
+  color: #ffd700 !important;
+  font-family: 'Cinzel Decorative', serif !important;
+}
+
+.chalkboard-modal .modal-body {
+  font-size: 1.15rem !important;
+  line-height: 1.6 !important;
+  color: #fdf6e3 !important;
+}
+
+.chalkboard-modal .btn-danger {
+  background-color: #b22222 !important;
+  border: 2px solid #ffd700 !important;
+}
+
+.chalkboard-modal .btn-secondary {
+  background-color: #333 !important;
+  border: 2px solid #ccc !important;
+}
